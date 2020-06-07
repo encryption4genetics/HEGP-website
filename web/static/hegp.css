@@ -1,0 +1,19 @@
+header {
+}
+
+body {
+    background: white;
+}
+
+div.header {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+section.page-body {
+}
+
+footer {
+    display: none;
+}
