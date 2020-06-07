@@ -19,6 +19,16 @@
 (define point-left-image
   '(img ((src "/pointing-finger-left.png"))))
 
+(define (get-path fn) (string-append "/home/wrk/iwrk/opensource/code/genetics/HEGP-website/doc/" fn))
+
+(define (read-file fn)
+  (let ([htmlfn (get-path fn)])
+  (with-input-from-file htmlfn
+    (lambda () (read-bytes (file-size htmlfn))))))
+
+(define (strip-body fn)
+  (include-template/xml "../doc/challenge.html"))
+
 (define (start request)
   (response/xexpr
    `(html ((lang "en"))
@@ -39,6 +49,10 @@
 
             (div ((class "header"))
                  ,point-left-image))
+           (section
+            ; ,(read-file "challenge.html")
+            ,(strip-body "../doc/test.html")
+            )
            (footer
             (hr)
             (div ((class "copyright")) "Source " ,code-repo-url
