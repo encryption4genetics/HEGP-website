@@ -7,9 +7,13 @@
 (require web-server/templates)
 
 (define title "HEGP CHALLENGE")
+(define subtitle
+  ; https://doi.org/10.1534/genetics.120.303153"))
+  "Genetics June 1, 2020 vol. 215 no. 2 359-372")
+
 (define code-repo-url
   '(a ((href "https://github.com/encryption4genetics"))
-      "source code"))
+      "code"))
 (define point-right-image
   '(img ((src "/pointing-finger-right.png"))))
 (define point-left-image
@@ -28,14 +32,13 @@
           (body
            (header
             (div ((class "header"))
-             ,point-right-image
-            )
+                 ,point-right-image)
             (div ((class "header"))
-             (h1 ,title))
+                 (h1 ,title)
+                 (div ((class "subtitle")) ,subtitle))
+
             (div ((class "header"))
-             ,point-left-image
-            )
-            )
+                 ,point-left-image))
            (footer
             (hr)
             (div ((class "copyright")) "Source " ,code-repo-url

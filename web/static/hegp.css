@@ -3,6 +3,7 @@ header {
 
 body {
     background: white;
+    font-family: "Long Island", Georgia, Times, serif
 }
 
 div.header {
@@ -15,5 +16,5 @@ section.page-body {
 }
 
 footer {
-    display: none;
+    font-size: small;
 }
