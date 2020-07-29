@@ -24,8 +24,6 @@ This is a breakthrough in [[https://en.wikipedia.org/wiki/FAIR_data][FAIR data]]
 current practices of hiding/protecting genotype data and only
 providing summary statistics (which are not reproducible).
 
-
-
 ** Is this encryption safe?
 
 We tried find ways of cracking the code as discussed in our [[https://www.genetics.org/content/215/2/359][paper]].

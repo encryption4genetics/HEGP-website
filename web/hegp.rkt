@@ -27,8 +27,14 @@
 
 (define (strip-body fn)
   (string->xexpr
-   (bytes->string/utf-8
-   (read-file fn))))
+   (first
+    (string-split
+     (second
+      (string-split
+       (bytes->string/utf-8
+        (read-file fn))
+       "<body>"))
+     "<div id=\"postamble\" class=\"status\">"))))
 
 (define (start request)
   (response/xexpr
