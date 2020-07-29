@@ -1,10 +1,9 @@
 #lang racket
 
-;; (require "./execute.rkt")
-
 (require web-server/servlet
          web-server/servlet-env)
 (require web-server/templates)
+(require xml)
 
 (define title "HEGP CHALLENGE")
 (define subtitle
@@ -27,7 +26,9 @@
     (lambda () (read-bytes (file-size htmlfn))))))
 
 (define (strip-body fn)
-  (include-template/xml "../doc/challenge.html"))
+  (string->xexpr
+   (bytes->string/utf-8
+   (read-file fn))))
 
 (define (start request)
   (response/xexpr
@@ -50,9 +51,10 @@
             (div ((class "header"))
                  ,point-left-image))
            (section
-            ; ,(read-file "challenge.html")
-            ,(strip-body "../doc/test.html")
-            )
+            ,(strip-body "../doc/intro.html"))
+           ,(include-template/xml "./static/app.html")
+           (section
+            ,(strip-body "../doc/challenge.html"))
            (footer
             (hr)
             (div ((class "copyright")) "Source " ,code-repo-url
@@ -77,7 +79,7 @@
 
 (serve/servlet request-handler
                #:port 8080
-               #:launch-browser? #t
+               #:launch-browser? #f
                #:stateless? #t
                #:servlet-path "/"
                #:servlets-root "/"

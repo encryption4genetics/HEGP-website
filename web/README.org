@@ -13,6 +13,5 @@ To run it in a Guix container:
 #+begin_src sh
 ~/opt/guix/bin/guix environment -C guix --ad-hoc racket \
   --network --share=/export/tmp \
-  -- env TMPDIR=/export/tmp bash
-racket -L info web/hegp.rkt
+  -- env TMPDIR=/export/tmp bash -- racket -L info web/hegp.rkt
 #+end_src

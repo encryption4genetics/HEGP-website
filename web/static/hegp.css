@@ -18,3 +18,17 @@ section.page-body {
 footer {
     font-size: small;
 }
+
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 400px;
+}
+
+.buttons {
+    padding: 0;
+    // margin: auto;
+    // display: block;
+    text-align: center;
+}
