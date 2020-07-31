@@ -10,6 +10,13 @@
   ; https://doi.org/10.1534/genetics.120.303153"))
   "Genetics June 1, 2020 vol. 215 no. 2 359-372")
 
+(define subsubtitle
+  "Homomorphic Encryption of Genotypes and Phenotypes (HEGP)")
+
+(define animation-caption
+  "Animation of HEGP encrypting using step-wise linear orthogonal
+transformation:")
+
 (define code-repo-url
   '(a ((href "https://github.com/encryption4genetics"))
       "code"))
@@ -52,14 +59,18 @@
                  ,point-right-image)
             (div ((class "header"))
                  (h1 ,title)
-                 (div ((class "subtitle")) ,subtitle))
+                 (div ((class "subtitle")) ,subtitle)
+                 (div ((class "subsubtitle")) ,subsubtitle))
 
             (div ((class "header"))
                  ,point-left-image))
            (section
+            ((class "intro"))
             ,(strip-body "../doc/intro.html"))
+           (div ((class "caption")) ,animation-caption)
            ,(include-template/xml "./static/app.html")
            (section
+            ((class "main-text"))
             ,(strip-body "../doc/challenge.html"))
            (footer
             (hr)

@@ -1,11 +1,7 @@
-* HEGP Challenge
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
 
-/Homomorphic Encryption of Genotypes and Phenotypes (HEGP)/
-
-Here we announce the HEGP Challenge, with a prize for the person or
-group who can crack the code!
-
-** Sharing genotype data!
+* Sharing genotype data!
 
 With a [[https://www.genetics.org/content/215/2/359][publication in Genetics]] we present a novel homomorphic
 encryption method named HEGP that allows for sharing of genotypes and
@@ -24,27 +20,40 @@ This is a breakthrough in [[https://en.wikipedia.org/wiki/FAIR_data][FAIR data]]
 current practices of hiding/protecting genotype data and only
 providing summary statistics (which are not reproducible).
 
-** Is this encryption safe?
+* Is this encryption safe?
 
 We tried find ways of cracking the code as discussed in our [[https://www.genetics.org/content/215/2/359][paper]].
 Brute force guessing of a solution would take more compute seconds
 than there are molecules in the universe.
 
-** What is the challenge?
+* What is the challenge?
 
 The challenge consists of decrypting two data sets.
 
-For the first challenge we encrypted a data set consisting of data from
-genotypes already in the public domain. We consider the code cracked
-if you can identify 5 individuals correctly.
+For the first challenge we encrypted a data set consisting of 10,000
+genotypes by 200 individuals somewhere in the public domain. We
+consider this data cracked if you can identify 5 individuals
+correctly. Note that this data may be derived from human, mouse, rat,
+nematode or plant data.
 
-The second challenge is harder. We encrypted an unknown data set. We
-consider the code cracked if you compute 30% of the genotypes of this
-matrix correctly (we specify the margin of error).
+The second challenge is harder. We encrypted a mammel data set that is
+not in the public domain (yet). We consider the code cracked if you
+compute 30% of the genotypes of this matrix correctly (we specify the
+margin of error).
 
 * Who wins?
 
+@@html: <img src="cheque.png" align="left" />@@
 The best result with a publicly reproducible solution submitted by
-October 1st 2020 wins the HEGP Challenge and a cash prize of one
+December 31st 2020 wins the HEGP Challenge and a cash prize of one
 thousand dollars. In case of a tie the prize is shared. If there is no
 winner we will hold the prize until someone claims it.
+
+* How to submit?
+
+Submit your answer through a public git repository with the exact steps take
+to get there. The analysis should be reproducible by anyone. You can
+announce your solution on the website [[https://github.com/encryption4genetics/HEGP-website/issues][issue tracker]].
+
+Bon chance! May the best hacker win.
+@@html: <img src="hacker.jpg" align="center" width="100%" />@@

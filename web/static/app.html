@@ -1,0 +1,36 @@
+<script src="/hegp-challenge-anim.e31bb0bc.js"></script>
+<div id="container">
+  <canvas id="canvas" width="500" height="500"></canvas>
+  <div class="buttons">
+    <button id="rewind">Rewind</button>
+    <button id="pause">Pause</button>
+    <button id="play">Play</button>
+    <button id="reset">Reset</button>
+    <button id="end">To End</button>
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+  </div>
+</div>
+<script>var keys = hegp.key_series(50, 20);
+  var plaintext = hegp.gen_plaintext(20, 50);
+  var canvas = document.getElementById('canvas');
+  var rewindBtn = document.getElementById('rewind');
+  var pauseBtn = document.getElementById('pause');
+  var playBtn = document.getElementById('play');
+  var resetBtn = document.getElementById('reset');
+  var endBtn = document.getElementById('end');
+  var nextBtn = document.getElementById('next');
+  var prevBtn = document.getElementById('prev');
+  var anim = hegp.animate(canvas, plaintext, keys);
+  rewindBtn.addEventListener('click', function () {
+      return anim.prev(true);
+  });
+  pauseBtn.addEventListener('click', anim.pause);
+  playBtn.addEventListener('click', function () {
+      return anim.next(true);
+  });
+  resetBtn.addEventListener('click', anim.goto_start);
+  endBtn.addEventListener('click', anim.goto_end);
+  nextBtn.addEventListener('click', anim.next);
+  prevBtn.addEventListener('click', anim.prev);
+</script>

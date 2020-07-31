@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-29 Wed 10:04 -->
+<!-- 2020-07-31 Fri 03:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -242,37 +242,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgf5ee2c8">1. HEGP Challenge</a>
-<ul>
-<li><a href="#org4dd2f35">1.1. Sharing genotype data!</a></li>
-<li><a href="#org74b4f2e">1.2. Is this encryption safe?</a></li>
-<li><a href="#org6cf00d1">1.3. What is the challenge?</a></li>
-</ul>
-</li>
-<li><a href="#orgbd13b02">2. Who wins?</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf5ee2c8" class="outline-2">
-<h2 id="orgf5ee2c8"><span class="section-number-2">1</span> HEGP Challenge</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-<i>Homomorphic Encryption of Genotypes and Phenotypes (HEGP)</i>
-</p>
 
-<p>
-Here we announce the HEGP Challenge, with a prize for the person or
-group who can crack the code!
-</p>
-</div>
-
-<div id="outline-container-org4dd2f35" class="outline-3">
-<h3 id="org4dd2f35"><span class="section-number-3">1.1</span> Sharing genotype data!</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orge1714f9" class="outline-2">
+<h2 id="orge1714f9">Sharing genotype data!</h2>
+<div class="outline-text-2" id="text-orge1714f9">
 <p>
 With a <a href="https://www.genetics.org/content/215/2/359">publication in Genetics</a> we present a novel homomorphic
 encryption method named HEGP that allows for sharing of genotypes and
@@ -300,9 +273,9 @@ providing summary statistics (which are not reproducible).
 </div>
 </div>
 
-<div id="outline-container-org74b4f2e" class="outline-3">
-<h3 id="org74b4f2e"><span class="section-number-3">1.2</span> Is this encryption safe?</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgb4473c9" class="outline-2">
+<h2 id="orgb4473c9">Is this encryption safe?</h2>
+<div class="outline-text-2" id="text-orgb4473c9">
 <p>
 We tried find ways of cracking the code as discussed in our <a href="https://www.genetics.org/content/215/2/359">paper</a>.
 Brute force guessing of a solution would take more compute seconds
@@ -311,42 +284,61 @@ than there are molecules in the universe.
 </div>
 </div>
 
-<div id="outline-container-org6cf00d1" class="outline-3">
-<h3 id="org6cf00d1"><span class="section-number-3">1.3</span> What is the challenge?</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-orgb97c5f4" class="outline-2">
+<h2 id="orgb97c5f4">What is the challenge?</h2>
+<div class="outline-text-2" id="text-orgb97c5f4">
 <p>
 The challenge consists of decrypting two data sets.
 </p>
 
 <p>
-For the first challenge we encrypted a data set consisting of data from
-genotypes already in the public domain. We consider the code cracked
-if you can identify 5 individuals correctly.
+For the first challenge we encrypted a data set consisting of 10,000
+genotypes by 200 individuals somewhere in the public domain. We
+consider this data cracked if you can identify 5 individuals
+correctly. Note that this data may be derived from human, mouse, rat,
+nematode or plant data.
 </p>
 
 <p>
-The second challenge is harder. We encrypted an unknown data set. We
-consider the code cracked if you compute 30% of the genotypes of this
-matrix correctly (we specify the margin of error).
+The second challenge is harder. We encrypted a data set that is not in
+the public domain (yet). We consider the code cracked if you compute
+30% of the genotypes of this matrix correctly (we specify the margin
+of error).
 </p>
 </div>
 </div>
-</div>
 
-<div id="outline-container-orgbd13b02" class="outline-2">
-<h2 id="orgbd13b02"><span class="section-number-2">2</span> Who wins?</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgc40ef0b" class="outline-2">
+<h2 id="orgc40ef0b">Who wins?</h2>
+<div class="outline-text-2" id="text-orgc40ef0b">
 <p>
+ <img src="cheque.png" align="left" />
 The best result with a publicly reproducible solution submitted by
-October 1st 2020 wins the HEGP Challenge and a cash prize of one
+December 31st 2020 wins the HEGP Challenge and a cash prize of one
 thousand dollars. In case of a tie the prize is shared. If there is no
 winner we will hold the prize until someone claims it.
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgbfa4dcd" class="outline-2">
+<h2 id="orgbfa4dcd">How to submit?</h2>
+<div class="outline-text-2" id="text-orgbfa4dcd">
+<p>
+Submit your answer through a public git repository with the exact steps take
+to get there. The analysis should be reproducible by anyone. You can
+announce your solution on the website <a href="https://github.com/encryption4genetics/HEGP-website/issues">issue tracker</a>.
+</p>
+
+<p>
+Bon chance! May the best hacker win.
+ <img src="hacker.jpg" align="center" width="100%" />
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-07-29 Wed 09:51</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-07-31 Fri 03:38</small>.
 </div>
 </body>
 </html>

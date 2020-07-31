@@ -3,7 +3,9 @@ header {
 
 body {
     background: white;
-    font-family: "Long Island", Georgia, Times, serif
+    font-family: "Long Island", Georgia, Times, serif;
+    margin: 25px;
+
 }
 
 div.header {
@@ -12,7 +14,38 @@ div.header {
     vertical-align: top;
 }
 
-section.page-body {
+.subtitle {
+    text-align: center;
+    color: darkgreen;
+}
+
+.subsubtitle {
+    text-align: center;
+    color: darkgreen;
+}
+
+section.intro {
+    column-count: 2;
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: bold;
+    margin-top: 1em ;
+    margin-bottom: 2em ;
+}
+
+div.caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 1em ;
+    margin-bottom: 2em ;
+}
+
+section.main-text {
+    column-count: 2;
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: bold;
+    margin-top: 1em ;
+    margin-bottom: 2em ;
 }
 
 footer {
