@@ -3,7 +3,7 @@
 
 * The $1,000 Challenge!
 
-Are you mathematically and algorithmically inclined? Crack the
+Are you mathematically and algorithmic inclined? Crack the
 code! The authors announce the HEGP Challenge, with a $1,000 (one
 thousand dollar) prize and eternal fame for the person or group who
 can crack HEGP encrypted data. HEGP, when proven solid, will have a
@@ -19,13 +19,13 @@ Enigma.
 Homomorphic encryption is a mathematical translation of data into an
 encrypted form where the result of a computation is the same for the
 unencrypted and encrypted forms. With HEGP a matrix of data is
-tranformed by a high-dimensional random linear orthogonal
+transformed by a high-dimensional random linear orthogonal
 transformation key as described in the [[https://www.genetics.org/content/215/2/359][paper]] and visualised in below
 animation (hit @@html: <span class="buttons"> <button
 id="playtxt">Play</button> </span>@@). The resulting matrix encrypts the
 data while preserving the shape of the data.  @@html: <img width="80"
 src="rubik.jpg" align="right" />@@ One way to think about this is that
-when a Rubik cube gets rotated the fields change color, but the object
+when a Rubik cube gets rotated the fields change colour, but the object
 still maintains its shape as a three dimensional cube!  With DNA the
 genotype/phenotype shape is typically used to predict associations
 between genotypes and phenotypes.  @@html: <img width="80"
@@ -49,8 +49,8 @@ early- to mid-20th century to protect commercial, diplomatic and
 military communication. It was employed extensively by Nazi Germany
 during World War II, in all branches of the German military (source
 [[https://en.wikipedia.org/wiki/Enigma_machine][wikipedia]]).  @@html: <img src="enigma.jpg" align="left" />@@ Enigma
-encrypted text by a tranformation and was cracked by the Polish Cipher
+encrypted text by a transformation and was cracked by the Polish Cipher
 Bureau in 1932 and the crack was used by the allied forces to win the
 war.  To ascertain HEGP is bullet proof we invite the genius hackers
-and algorithmically inclined to crack the code and make HEGP history
+and algorithmic inclined to crack the code and make HEGP history
 (one way or the other).

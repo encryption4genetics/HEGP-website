@@ -10,7 +10,7 @@ analysis will still renders the same result.
 
 * Sharing genotype data!
 
-With a [[https://www.genetics.org/content/215/2/359][publication in Genetics]] we present a novel homomorphic
+With a [[https://www.genetics.org/content/215/2/359][publication in Genetics]] we present a novel Homomorphic
 encryption method named HEGP that allows for sharing of genotypes and
 phenotypes in the context of Genome Wide Association (GWA)
 studies. Importantly sharing but without giving away *private*
@@ -39,7 +39,7 @@ than there are molecules in the universe.
 
 * What is the challenge?
 
-The challenge consists of decrypting two data sets.
+The challenge consists of decryption of two data sets.
 
 For the first challenge we encrypted a data set consisting of 10,000
 genotypes by 200 individuals somewhere in the public domain. We
@@ -47,7 +47,7 @@ consider this data cracked if you can identify 5 individuals
 correctly. Note that this data may be derived from human, mouse, rat,
 nematode or plant data.
 
-The second challenge is harder. We encrypted a mammel data set that is
+The second challenge is harder. We encrypted a mammal data set that is
 not in the public domain (yet). We consider the code cracked if you
 compute 30% of the genotypes of this matrix correctly (we specify the
 margin of error).
