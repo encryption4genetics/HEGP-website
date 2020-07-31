@@ -1,5 +1,10 @@
 <script src="/hegp-challenge-anim.e31bb0bc.js"></script>
 <div id="container">
+  <!--
+      <div class="gwa">
+        <img src="gemma.gif" width="400" />
+      </div>
+  -->
   <canvas id="canvas" width="500" height="500"></canvas>
   <div class="buttons">
     <button id="rewind">Rewind</button>
@@ -17,6 +22,7 @@
   var rewindBtn = document.getElementById('rewind');
   var pauseBtn = document.getElementById('pause');
   var playBtn = document.getElementById('play');
+  var playBtnTxt = document.getElementById('playtxt');
   var resetBtn = document.getElementById('reset');
   var endBtn = document.getElementById('end');
   var nextBtn = document.getElementById('next');
@@ -27,6 +33,9 @@
   });
   pauseBtn.addEventListener('click', anim.pause);
   playBtn.addEventListener('click', function () {
+      return anim.next(true);
+  });
+  playBtnTxt.addEventListener('click', function () {
       return anim.next(true);
   });
   resetBtn.addEventListener('click', anim.goto_start);

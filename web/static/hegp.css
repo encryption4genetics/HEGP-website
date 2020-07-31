@@ -40,6 +40,14 @@ div.caption {
     margin-bottom: 2em ;
 }
 
+div.gwa {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    // text-align: center;
+}
+
 section.main-text {
     column-count: 2;
     font-family: "Lucida Console", Courier, monospace;

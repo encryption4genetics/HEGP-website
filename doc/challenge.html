@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-31 Fri 03:38 -->
+<!-- 2020-07-31 Fri 04:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -243,9 +243,21 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 
-<div id="outline-container-orge1714f9" class="outline-2">
-<h2 id="orge1714f9">Sharing genotype data!</h2>
-<div class="outline-text-2" id="text-orge1714f9">
+<div id="outline-container-org93ba909" class="outline-2">
+<h2 id="org93ba909">Animation</h2>
+<div class="outline-text-2" id="text-org93ba909">
+<p>
+In above animation genotypes and phenotypes are encoded in a
+matrix. Rows are individuals and columns are genotype markers along
+chromosomes as well as phenotypes. The data is scrambled while the
+analysis will still renders the same result.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf1e1a0f" class="outline-2">
+<h2 id="orgf1e1a0f">Sharing genotype data!</h2>
+<div class="outline-text-2" id="text-orgf1e1a0f">
 <p>
 With a <a href="https://www.genetics.org/content/215/2/359">publication in Genetics</a> we present a novel homomorphic
 encryption method named HEGP that allows for sharing of genotypes and
@@ -256,12 +268,14 @@ information and making individuals identifiable.
 
 <p>
 With HEGP anyone can freely hand over genotype and phenotype data to
-anyone else and have them reproduce the results.
+anyone else and have them reproduce the results. Even better, the
+encoding can be stacked. So the second party can encrypt and combine
+their data independently and give it to a third party.
 </p>
 
 <p>
-Even better, they can use that data to add to their own analysis. And
-they can share their data with us! As such, genotype data can be
+So any party can use our data to add it their own analysis. And they
+can share their data back with us! As such, genotype data can be
 stored on (public) servers and GWA analysis can be reproduced.
 </p>
 
@@ -273,20 +287,24 @@ providing summary statistics (which are not reproducible).
 </div>
 </div>
 
-<div id="outline-container-orgb4473c9" class="outline-2">
-<h2 id="orgb4473c9">Is this encryption safe?</h2>
-<div class="outline-text-2" id="text-orgb4473c9">
+<div id="outline-container-org2eb97d5" class="outline-2">
+<h2 id="org2eb97d5">Is this encryption safe?</h2>
+<div class="outline-text-2" id="text-org2eb97d5">
 <p>
 We tried find ways of cracking the code as discussed in our <a href="https://www.genetics.org/content/215/2/359">paper</a>.
 Brute force guessing of a solution would take more compute seconds
 than there are molecules in the universe.
 </p>
+
+<p>
+ <img src="universe.jpg" width="100%" />
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgb97c5f4" class="outline-2">
-<h2 id="orgb97c5f4">What is the challenge?</h2>
-<div class="outline-text-2" id="text-orgb97c5f4">
+<div id="outline-container-org88e6dd7" class="outline-2">
+<h2 id="org88e6dd7">What is the challenge?</h2>
+<div class="outline-text-2" id="text-org88e6dd7">
 <p>
 The challenge consists of decrypting two data sets.
 </p>
@@ -300,30 +318,31 @@ nematode or plant data.
 </p>
 
 <p>
-The second challenge is harder. We encrypted a data set that is not in
-the public domain (yet). We consider the code cracked if you compute
-30% of the genotypes of this matrix correctly (we specify the margin
-of error).
+The second challenge is harder. We encrypted a mammel data set that is
+not in the public domain (yet). We consider the code cracked if you
+compute 30% of the genotypes of this matrix correctly (we specify the
+margin of error).
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc40ef0b" class="outline-2">
-<h2 id="orgc40ef0b">Who wins?</h2>
-<div class="outline-text-2" id="text-orgc40ef0b">
+<div id="outline-container-org470f8bd" class="outline-2">
+<h2 id="org470f8bd">Who wins a</h2>
+<div class="outline-text-2" id="text-org470f8bd">
 <p>
- <img src="cheque.png" align="left" />
-The best result with a publicly reproducible solution submitted by
-December 31st 2020 wins the HEGP Challenge and a cash prize of one
-thousand dollars. In case of a tie the prize is shared. If there is no
-winner we will hold the prize until someone claims it.
+ <img src="cheque.png" align="left" /> The best result with a
+publicly reproducible solution submitted by December 31st 2020 wins
+the HEGP Challenge and a cash prize of one thousand dollars. Points
+are given for improving the method. In case of a tie the prize is
+shared. If there is no winner we will hold the prize until someone
+claims it.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbfa4dcd" class="outline-2">
-<h2 id="orgbfa4dcd">How to submit?</h2>
-<div class="outline-text-2" id="text-orgbfa4dcd">
+<div id="outline-container-orgd15255a" class="outline-2">
+<h2 id="orgd15255a">How to submit?</h2>
+<div class="outline-text-2" id="text-orgd15255a">
 <p>
 Submit your answer through a public git repository with the exact steps take
 to get there. The analysis should be reproducible by anyone. You can
@@ -338,7 +357,7 @@ Bon chance! May the best hacker win.
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-07-31 Fri 03:38</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-07-31 Fri 04:29</small>.
 </div>
 </body>
 </html>
