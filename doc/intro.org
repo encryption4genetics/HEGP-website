@@ -7,6 +7,7 @@
 /To go straight to the actual challenge click
 [[./challenge][here]]/.
 
+
 Crack the code! The authors announce the HEGP (heegeepee;
 /hiːdʒiːpiː/) Challenge, with a $1,000 (one thousand dollar) prize for
 the individual or group who can crack HEGP encrypted data. HEGP, when
@@ -21,6 +22,31 @@ strawberries and Enigma.
 
 /To go straight to the actual challenge click
 [[./challenge][here]]/.
+
+* Relevance
+
+With a [[https://www.genetics.org/content/215/2/359][publication in Genetics]] we present a novel Homomorphic
+encryption method named HEGP that allows for sharing of genotypes and
+phenotypes in the context of Genome Wide Association (GWA)
+studies. Importantly sharing but without giving away *private*
+information and making individuals identifiable. For more information
+check out [[https://www.slideshare.net/EmilianoDC/the-genomics-revolution-the-good-the-bad-and-the-ugly][a privacy researcher's perspective]].
+
+With HEGP anyone can freely hand over genotype and phenotype data to
+anyone else and have them reproduce the results. Even better, the
+encoding can be stacked. So the second party can encrypt and combine
+their data independently and give it to a third party.
+
+So any party can use our data to add it their own analysis. And they
+can share their data back with us. As such, genotype data can be
+stored on (public) servers and GWA analysis can be reproduced.
+
+This is a breakthrough in [[https://en.wikipedia.org/wiki/FAIR_data][FAIR data]] sharing and contrasts greatly with
+current practice of hiding/protecting genotype data and only providing
+summary statistics. One example is an important UK Biobank [[https://datashare.is.ed.ac.uk/handle/10283/3083][depression]]
+study where genetic markers are presented with their statistical
+significance. We can only assume that this study can be reproduced by
+a group of researchers having access to the original data.
 
 * Simple explanation
 
