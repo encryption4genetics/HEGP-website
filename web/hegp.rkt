@@ -126,7 +126,7 @@ transformation:")
   (dispatch request))
 
 (serve/servlet request-handler
-               #:port 8080
+               #:port 8096
                #:launch-browser? #f
                #:stateless? #t
                #:servlet-path "/"
