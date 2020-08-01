@@ -1,0 +1,79 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+
+* The HEGP challenge
+
+The authors announce the HEGP (heegeepee;
+/hiːdʒiːpiː/) Challenge, with a $1,000 (one thousand dollar) prize for
+the individual or group who can crack HEGP encrypted data.
+
+/See this [[./start][page]] for a general guide on HEGP and the cracking challenge/
+
+* Details
+
+The authors offer a reward of $1000 (one thousand US dollar) for
+cracking the HEGP homomorphic encryption method for genotypes and
+phenotypes as described in the open access [[https://www.genetics.org/content/215/2/359][paper]].
+
+The challenge consists of decryption of two data sets.
+
+For the first challenge we encrypted a data set consisting of 10,000
+genotypes by 200 individuals which exists somewhere in the public
+domain. We consider this data cracked if 5 individuals are identified
+correctly. Note that this data may be from a human, mouse, rat,
+nematode or plant dataset.
+
+The second challenge is harder. We encrypted a mammal data set that is
+not in the public domain (yet). We consider the code cracked if you
+compute 30% of the genotypes of this matrix correctly (we specify the
+margin of error).
+
+The main concern is that individuals get identified based on
+information in the public domain and/or by finding patterns in the
+encrypted data.
+
+* Reference code
+
+The reference code for HEGP currently exists under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPLv3]] licensed [[https://github.com/encryption4genetics/hegp-R][R
+code]] or [[https://github.com/encryption4genetics/hegp-julia][Julia code]]. An example of running a GWA as presented in the
+paper can be found [[https://github.com/encryption4genetics/HEGP][here]]. The algorithm with a description of brute
+force attack is described in the [[https://www.genetics.org/content/215/2/359#sec-4][results section]].
+
+* Submissions
+
+Submissions should be posted in a public git account (github, gitlab
+or similar), and reward will be given in USD.  The solution should be
+reproducible and announced on the website [[https://github.com/encryption4genetics/HEGP-website/issues][issue tracker]].
+
+* Introduction
+
+The homomorphic encryption method consists of an orthogonal
+transformation by multiplication by the orthogonal matrix P with a
+matrix containing the data y and G.
+
+@@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="800" />@@
+
+From the original [[https://www.genetics.org/content/215/2/359#sec-4][paper]]: privacy in relation to quantitative genetic
+analysis. (A) A numeric phenotype vector y (left) and genotype dosage
+matrix G (right) are represented as colors and shades of gray. Each
+row of the matrix represents one individual and each column one
+SNP. Genotypes are encoded as imputed dosages clustered at the values
+Embedded Image giving the numbers of alternate alleles. (B) The same
+data after multiplication by an orthogonal matrix P (a rotation
+represented by the curved orange arrow). The genotype dosages are now
+represented by a continuum of real numbers. (C) The distribution of
+dosages for a particular SNP (column of G), clustered around
+0,1,2. (D) The distribution of the same dosages after orthogonal
+transformation by multiplication by the orthogonal matrix P (black
+histogram) with the normal distribution with same mean and variance
+superimposed in red. (F) The normal QQ plot for the data in D, showing
+the transformed dosages are very close to a normal distribution. (E) A
+cartoon of the HEGP scheme. The top black arrow and equation show the
+linear mixed model relating the phenotype y to genotype G with
+regression coefficients β representing the allelic effects. The
+variance matrix for the residuals is V. After multiplication by
+orthogonal matrix P, data Embedded Image andEmbedded Image and the
+mixed linear model are transformed as shown in orange. The likelihood
+and regression estimates Embedded Image are preserved. HEGP,
+homomorphic encryption for genotypes and phenotypes; QQ,
+quantile–quantile.

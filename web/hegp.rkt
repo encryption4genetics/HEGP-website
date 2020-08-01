@@ -25,6 +25,9 @@ transformation:")
 (define point-left-image
   '(img ((src "/pointing-finger-left.png"))))
 
+(define (edit-button uri)
+  `(div ((class "editbutton")) (a ((href ,uri)) "Edit text!")))
+
 (define (get-path fn) (string-append "/home/wrk/iwrk/opensource/code/genetics/HEGP-website/doc/" fn))
 
 (define (read-file fn)
@@ -42,6 +45,31 @@ transformation:")
         (read-file fn))
        "<body>"))
      "<div id=\"postamble\" class=\"status\">"))))
+
+(define (challenge request)
+  (response/xexpr
+   `(html ((lang "en"))
+          (head (title ,title)
+                (link ((rel "stylesheet")
+                       (href "/style.css")
+                       (type "text/css")))
+                (link ((rel "stylesheet")
+                       (href "/hegp.css")
+                       (type "text/css"))))
+          (body
+           (header
+            (div ((class "header"))
+                 ,point-right-image)
+            (div ((class "header"))
+                 (h1 ,title)
+                 (div ((class "subtitle")) ,subtitle)
+                 (div ((class "subsubtitle")) ,subsubtitle))
+            (div ((class "header"))
+                 ,point-left-image)
+           ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/call.org")
+           (section
+            ((class "call"))
+            ,(strip-body "../doc/call.html")))))))
 
 (define (start request)
   (response/xexpr
@@ -61,14 +89,16 @@ transformation:")
                  (h1 ,title)
                  (div ((class "subtitle")) ,subtitle)
                  (div ((class "subsubtitle")) ,subsubtitle))
-
             (div ((class "header"))
                  ,point-left-image))
+
+           ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/intro.org")
            (section
             ((class "intro"))
             ,(strip-body "../doc/intro.html"))
            (div ((class "caption")) ,animation-caption)
            ,(include-template/xml "./static/app.html")
+           ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/challenge.org")
            (section
             ((class "main-text"))
             ,(strip-body "../doc/challenge.html"))
@@ -87,6 +117,7 @@ transformation:")
 (define-values (dispatch generate-url)
   (dispatch-rules
     [("start") start]
+    [("challenge") challenge]
     [("") start]
     ; [else (error "There is no procedure to handle the url.")]))
     ))

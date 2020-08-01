@@ -3,54 +3,73 @@
 
 * The $1,000 Challenge!
 
-Are you mathematically and algorithmic inclined? Crack the
-code! The authors announce the HEGP Challenge, with a $1,000 (one
-thousand dollar) prize and eternal fame for the person or group who
-can crack HEGP encrypted data. HEGP, when proven solid, will have a
-large impact on the way human genetics is pursued today because it
-will allow for sharing genotype data while preserving privacy of the
-individual. Sharing data is required for reproducible Science.
 
-Here we discuss cracking HEGP, Rubik cube, DNA, strawberries and
-Enigma.
+/To go straight to the actual challenge click
+[[./challenge][here]]/.
 
-* Explanation
+Crack the code! The authors announce the HEGP (heegeepee;
+/hiːdʒiːpiː/) Challenge, with a $1,000 (one thousand dollar) prize for
+the individual or group who can crack HEGP encrypted data. HEGP, when
+proven solid, will have a large impact on the way human genetics is
+pursued today because it will allow for sharing genotype data while
+preserving privacy of the individual. Not only is sharing data
+required for reproducible Science, there is also a large interest in
+hosting data on laptops and servers that need not be [[https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act][HIPAA]] compliant.
+
+On this page we chat about cracking HEGP, Rubik cube, DNA,
+strawberries and Enigma.
+
+/To go straight to the actual challenge click
+[[./challenge][here]]/.
+
+* Simple explanation
 
 Homomorphic encryption is a mathematical translation of data into an
 encrypted form where the result of a computation is the same for the
 unencrypted and encrypted forms. With HEGP a matrix of data is
 transformed by a high-dimensional random linear orthogonal
-transformation key as described in the [[https://www.genetics.org/content/215/2/359][paper]] and visualised in below
-animation (hit @@html: <span class="buttons"> <button
-id="playtxt">Play</button> </span>@@). The resulting matrix encrypts the
-data while preserving the shape of the data.  @@html: <img width="80"
-src="rubik.jpg" align="right" />@@ One way to think about this is that
-when a Rubik cube gets rotated the fields change colour, but the object
-still maintains its shape as a three dimensional cube!  With DNA the
-genotype/phenotype shape is typically used to predict associations
-between genotypes and phenotypes.  @@html: <img width="80"
-src="strawberry.jpg" align="right" />@@ An example of a phenotype is a
-preference for strawberry taste. An example of an associated genotype
-is a DNA encoded [[https://en.wikipedia.org/wiki/Olfactory_receptor][olfactory receptor]].
+transformation key as described in the [[https://www.genetics.org/content/215/2/359][paper]] (open access) and
+visualised in below animation (hit @@html: <span class="buttons">
+<button id="playtxt">Play</button> </span>@@). The resulting matrix
+scrambles the data while preserving the 'shape of the data' for
+analysis.  @@html: <img width="80" src="rubik.jpg" align="right" />@@
+One way to think about this is that when a Rubik cube gets rotated the
+fields change colour, but the object still maintains its shape as a
+three dimensional cube.  With DNA the genotype/phenotype shape is
+typically used to predict associations between genotypes and
+phenotypes.  @@html: <img width="80" src="strawberry.jpg"
+align="right" />@@ An example of a phenotype is a preference for
+strawberry taste. An example of an associated genotype is a DNA
+encoded [[https://en.wikipedia.org/wiki/Olfactory_receptor][olfactory receptor]].
+
+Here we display a typical example of genome-wide association (GWA) of
+phenotype against genotype:
 
 @@html: <img src="gemma.gif" width="100%" alt="Example of genome-wide
 association (GWA) of phenotype against genotype" />@@
 
-Above image shows a typical example of genome-wide association (GWA)
-of phenotype against genotype. Genes (on chromosomes) involved in some
-trait are marked. This is the backbone computation for finding genes
-involved in some trait and used, for example, in the [[https://www.ukbiobank.ac.uk/][UK Biobank]]
-involving half a million subjects!
+Genes (on chromosomes) involved in some trait are marked. This is the
+backbone computation for finding genes involved in some trait and
+used, for example, in the [[https://www.ukbiobank.ac.uk/][UK Biobank]] involving half a million
+subjects. They apply GWA to find genes involved in, for example,
+cancer or COVID-19 mortality; the first steps towards finding better
+treatments.
+
+@@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="100%" />@@
+
+In above image data is shown before and after encryption. The
+unencrypted data contains three values while the encrypted data shows
+a normal distribution.
 
 * Enigma
 
 The Enigma machine is an encryption device developed and used in the
-early- to mid-20th century to protect commercial, diplomatic and
-military communication. It was employed extensively by Nazi Germany
-during World War II, in all branches of the German military (source
+20th century to protect commercial, diplomatic and military
+communication. It was employed extensively by Nazi Germany during
+World War II, in all branches of the German military (source
 [[https://en.wikipedia.org/wiki/Enigma_machine][wikipedia]]).  @@html: <img src="enigma.jpg" align="left" />@@ Enigma
-encrypted text by a transformation and was cracked by the Polish Cipher
-Bureau in 1932 and the crack was used by the allied forces to win the
-war.  To ascertain HEGP is bullet proof we invite the genius hackers
-and algorithmic inclined to crack the code and make HEGP history
-(one way or the other).
+encrypted text by a transformation and was cracked by the Polish
+Cipher Bureau in 1932 and the crack was used by the allied forces to
+win the war.  To ascertain HEGP is bullet proof, unlike ENIGMA, we
+invite the algorithmic inclined to crack the code and make HEGP
+history (one way or the other).
