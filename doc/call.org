@@ -17,7 +17,7 @@ phenotypes as described in this open access [[https://www.genetics.org/content/2
 
 The challenge consists of decryption of two genotype data sets. 
 
-In both data sets, plaintext genotypes are represented numerically as matrices of allele dosages, with rows representing individuals and columns representing SNP sites. Each genotype dosage takes the integer values 0,1,2. After encryption these dosages are trensformed into floating point cyphertexts that are approximately Normally distributed. You task is to recover the plaintext from the cyphertext.
+In both data sets, plaintext genotypes are represented numerically as matrices of allele dosages, with rows representing individuals and columns representing SNP sites. Each plaintext genotype dosage takes the integer values 0,1,2. After encryption these dosages are trensformed into floating point cyphertexts that are approximately Normally distributed. You task is to recover the plaintext from the cyphertext.
 
 For the first challenge we encrypted a data set consisting of 10,000
 SNP genotypes by 200 individuals which exists somewhere in the public
@@ -25,8 +25,8 @@ domain. We consider this data cracked if 5 individuals are identified
 correctly. Note that this data may be from a human, mouse, rat,
 nematode or plant dataset.
 
-The second challenge is harder. We encrypted a mammal data set that is
-not in the public domain (yet). We consider the code cracked if you
+The second challenge is harder. We encrypted a mammalian data set that is
+not in the public domain (yet), comprising 1586 individuals and 12561 SNPs. We consider the code cracked if you
 compute 30% of the genotypes of this matrix correctly (we specify the
 margin of error).
 
