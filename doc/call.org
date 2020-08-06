@@ -74,8 +74,8 @@ cartoon of the HEGP scheme. The top black arrow and equation show the
 linear mixed model relating the phenotype y to genotype G with
 regression coefficients β representing the allelic effects. The
 variance matrix for the residuals is V. After multiplication by
-orthogonal matrix P, data Embedded Image andEmbedded Image and the
+orthogonal matrix P, plaintext data y, G  and the
 mixed linear model are transformed as shown in orange. The likelihood
-and regression estimates Embedded Image are preserved. HEGP,
+and regression estimates  β are preserved. HEGP,
 homomorphic encryption for genotypes and phenotypes; QQ,
 quantile–quantile.
