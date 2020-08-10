@@ -34,11 +34,11 @@ encrypted data.
 The second challenge is harder. We encrypted a mammalian data set that is
 not in the public domain (yet), comprising 1586 individuals and 12561 SNPs. We consider the code cracked if you
 compute 30% of the genotypes of this matrix correctly (we specify the
-margin of error).
+margin of error). The MD5 checksum for the ciphertext file is 8bbdc29e3d51dafa224a1af5a9bbadf7. We will release the plaintext file and the key file when the challenge is cracked or after six months. The MD5 checksums for these files are a007e8f5f085798a88180386ffbfa58f (plaintext genotypes) and a9af5b4cd629811e1c2319d794849b2c (key). The ciphertext file (146Mb) is available from UCL Figshare with DOI 10.5522/04/12783845.
 
 The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$af of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored. 
 
-IF you don't want to use the R packagem then to unpack the datasets, and write the genotypes and allele frequencies to a tab-delimited text file, use the R commands:
+IF you don't want to use the R package, then you can unpack the datasets and write the genotypes and allele frequencies to tab-delimited text files with the R commands:
 
 > load("ciphertext2.D.RData")
 > write.delim( D$geno, "ciphertext2.tsv", quote=F, row=F )
