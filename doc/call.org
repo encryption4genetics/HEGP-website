@@ -40,11 +40,11 @@ The ciphertext Datasets are provided as RData objects which can be manipulated u
 
 IF you don't want to use the R packagem then to unpack the datasets, and write the genotypes and allele frequencies to a tab-delimited text file, use the R commands:
 
-> load("ciphertext.D.RData")
-> write.delim( D$geno, "ciphertext.tsv", quote=F, row=F )
-> write.delim( D$af, "af.tsv", quote=F, row=F )
+> load("ciphertext2.D.RData")
+> write.delim( D$geno, "ciphertext2.tsv", quote=F, row=F )
+> write.delim( D$af, "af2.tsv", quote=F, row=F )
 
-The allele frequency data might help with the decryption as it gives a target to aim at.
+The plaintext allele frequency data might help with decryption as it gives target allele frequencies to aim at (the allele frequencies of the ciphertext are different).
 
 * Reference code
 
