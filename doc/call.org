@@ -36,7 +36,15 @@ not in the public domain (yet), comprising 1586 individuals and 12561 SNPs. We c
 compute 30% of the genotypes of this matrix correctly (we specify the
 margin of error).
 
+The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$af of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored. 
 
+IF you don't want to use the R packagem then to unpack the datasets, and write the genotypes and allele frequencies to a tab-delimited text file, use the R commands:
+
+> load("ciphertext.D.RData")
+> write.delim( D$geno, "ciphertext.tsv", quote=F, row=F )
+> write.delim( D$af, "af.tsv", quote=F, row=F )
+
+The allele frequency data might help with the decryption as it gives a target to aim at.
 
 * Reference code
 
