@@ -5,3 +5,5 @@ The website is written in Racket and published under the AGPL license.
 Run in a GNU Guix container with something like
 
 : guix environment -C guix --ad-hoc racket   --network --share=/export/tmp -- env TMPDIR=/export/tmp racket -L info web/hegp.rkt
+
+The latest deployment command is in [[./.guix-deploy][guix-deploy]].
