@@ -46,6 +46,37 @@ IF you don't want to use the R package, then you can unpack the datasets and wri
 
 The plaintext allele frequency data might help with decryption as it gives target allele frequencies to aim at (the allele frequencies of the ciphertext are different).
 
+* Toy Example
+
+The task is best described with an small example, a SNP dosage matrix with 10 subjects (rows) and 8 SNPs (columns):
+
+#+begin_src
+sub1     0    1    2    1    1    1    1    2
+sub2     0    1    2    1    2    2    2    2
+sub3     1    1    2    1    2    2    2    1
+sub4     2    1    2    2    1    2    1    1
+sub5     2    2    2    0    1    1    2    1
+sub6     2    2    2    1    1    2    2    2
+sub7     1    2    1    1    1    1    2    2
+sub8     0    1    2    1    2    1    2    2
+sub9     1    1    2    2    1    1    1    2
+sub10    1    2    2    1    2    2    2    1
+#+end_src
+
+The first step standardises each column to have mean 0 and variance 1:
+
+sub1  -1.224745e+00 -0.7745967  0.3162278 -0.1761661 -0.7745967 -0.9486833
+sub2  -1.224745e+00 -0.7745967  0.3162278 -0.1761661  1.1618950  0.9486833
+sub3  -5.749536e-10 -0.7745967  0.3162278 -0.1761661  1.1618950  0.9486833
+sub4   1.224745e+00 -0.7745967  0.3162278  1.5854946 -0.7745967  0.9486833
+sub5   1.224745e+00  1.1618950  0.3162278 -1.9378267 -0.7745967 -0.9486833
+sub6   1.224745e+00  1.1618950  0.3162278 -0.1761661 -0.7745967  0.9486833
+sub7  -1.761818e-09  1.1618950 -2.8460499 -0.1761661 -0.7745967 -0.9486833
+sub8  -1.224745e+00 -0.7745967  0.3162278 -0.1761661  1.1618950 -0.9486833
+sub9   5.584054e-10 -0.7745967  0.3162278  1.5854946 -0.7745967 -0.9486833
+sub10 -7.763129e-10  1.1618950  0.3162278 -0.1761661  1.1618950  0.9486833
+
+
 * Reference code
 
 The reference code for HEGP currently exists under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPLv3]] licensed [[https://github.com/encryption4genetics/hegp-R][R
