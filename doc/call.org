@@ -116,7 +116,7 @@ To decrypt the ciphertext it is necessary to multiply it by the inverse of the k
 
 The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal is the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies in the plaintext which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure becuase uses of the ciphertext would need this information for some genetic analyses.
 
-We provide the toy dataset "toy.hegp.RData" and its encryption key as R objects so that you can repreduce these analyses.
+We provide the toy dataset and its encryption key as R objects in the file "toy.hegp.RData"  so that you can reproduce these analyses.
 
 #+begin_src R
 > load("toy.hegp.RData") # loads a dataset D.toy and encryption key e.toy
