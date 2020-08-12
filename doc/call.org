@@ -119,6 +119,7 @@ The challenge is, in the absence of knowing either P or H, to find an orthogonal
 We provide the toy dataset and its encryption key as R objects in the file "toy.hegp.RData"  so that you can reproduce these analyses.
 
 #+begin_src R
+> library(hegp)
 > load("toy.hegp.RData") # loads a dataset D.toy and encryption key e.toy
 > ciphertext.toy = encrypt.D(plaintext.toy, key.toy)
 > decrypt.toy = encrypt.D(ciphertext.toy, key.toy, invert=TRUE)
