@@ -4,6 +4,9 @@
          web-server/servlet-env)
 (require web-server/templates)
 (require xml)
+(require racket/runtime-path)
+
+(define-runtime-path cwd "..") ;; need this to find the real root
 
 (define title "HEGP CHALLENGE")
 (define subtitle
@@ -28,10 +31,12 @@ transformation:")
 (define (edit-button uri)
   `(div ((class "editbutton")) (a ((href ,uri)) "Edit text!")))
 
-(define (get-path fn) (string-append "/home/wrk/iwrk/opensource/code/genetics/HEGP-website/doc/" fn))
+(define (get-doc-path fn)
+  (begin
+    (path->string (build-path cwd "doc" fn))))
 
 (define (read-file fn)
-  (let ([htmlfn (get-path fn)])
+  (let ([htmlfn (get-doc-path fn)])
   (with-input-from-file htmlfn
     (lambda () (read-bytes (file-size htmlfn))))))
 
@@ -69,7 +74,7 @@ transformation:")
            ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/call.org")
            (section
             ((class "call"))
-            ,(strip-body "../doc/call.html")))))))
+            ,(strip-body "call.html")))))))
 
 (define (start request)
   (response/xexpr
@@ -95,13 +100,13 @@ transformation:")
            ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/intro.org")
            (section
             ((class "intro"))
-            ,(strip-body "../doc/intro.html"))
+            ,(strip-body "intro.html"))
            (div ((class "caption")) ,animation-caption)
            ,(include-template/xml "./static/app.html")
            ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/challenge.org")
            (section
             ((class "main-text"))
-            ,(strip-body "../doc/challenge.html"))
+            ,(strip-body "challenge.html"))
            (footer
             (hr)
             (div ((class "copyright")) "Source " ,code-repo-url
