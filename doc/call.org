@@ -35,14 +35,14 @@ The second challenge is harder. We encrypted a mammalian data set that is
 not in the public domain (yet), comprising 1586 individuals and 12561 SNPs. We consider the code cracked if you
 compute  the plaintext genotypes of this matrix correctly with mean error of under 10%. The MD5 checksum for the ciphertext file is 8bbdc29e3d51dafa224a1af5a9bbadf7. We will release the plaintext file and the key file when the challenge is cracked or after six months. The MD5 checksums for these files are a007e8f5f085798a88180386ffbfa58f (plaintext genotypes) and a9af5b4cd629811e1c2319d794849b2c (key). The ciphertext file (146Mb) is available from UCL Figshare with DOI 10.5522/04/12783845.
 
-The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$af of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored. 
+The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$maf of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored. 
 
-IF you don't want to use the R package, then you can unpack the datasets and write the genotypes and allele frequencies to tab-delimited text files with the R commands:
+If you don't want to use the R package, then you can unpack the datasets and write the genotypes and allele frequencies to tab-delimited text files with the R commands:
 
 #+begin_src R
 > load("ciphertext2.D.RData")
 > write.delim( D$geno, "ciphertext2.tsv", quote=F, row=F )
-> write.delim( D$af, "af2.tsv", quote=F, row=F )
+> write.delim( D$maf, "af2.tsv", quote=F, row=F )
 #+end_src
 
 The plaintext allele frequency data might help with decryption as it gives target allele frequencies to aim at (the allele frequencies of the ciphertext are different).
@@ -113,9 +113,9 @@ This form of encryption is homomorphic with respect to many quantitative genetic
 
 To decrypt the ciphertext it is necessary to multiply it by the inverse of the key P, which is equal to the transpose of P because it is orthogonal. 
 
-The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal is the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies in the plaintext which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure becuase uses of the ciphertext would need this information for some genetic analyses.
+The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal if the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies of the plaintext, which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure because users of the ciphertext would need this information for some genetic analyses.
 
-We provide the toy dataset and its encryption key as R objects in the file "toy.hegp.RData"  so that you can reproduce these analyses.
+We provide the toy dataset and its encryption key as R objects in the file "toy.hegp.RData" on this GitHub site so that you can reproduce these analyses.
 
 #+begin_src R
 > library(hegp)
