@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-13 Thu 05:27 -->
+<!-- 2020-08-13 Thu 05:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -243,9 +243,9 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 
-<div id="outline-container-org00482c8" class="outline-2">
-<h2 id="org00482c8">The HEGP challenge</h2>
-<div class="outline-text-2" id="text-org00482c8">
+<div id="outline-container-org7971b77" class="outline-2">
+<h2 id="org7971b77">The HEGP challenge</h2>
+<div class="outline-text-2" id="text-org7971b77">
 <p>
 The authors announce the HEGP (heegeepee;
 <i>hiːdʒiːpiː</i>) Challenge, with a $1,000 (one thousand dollar) prize for
@@ -258,9 +258,9 @@ the individual or group who can crack HEGP encrypted data.
 </div>
 </div>
 
-<div id="outline-container-orga404eec" class="outline-2">
-<h2 id="orga404eec">Details</h2>
-<div class="outline-text-2" id="text-orga404eec">
+<div id="outline-container-org3173e3f" class="outline-2">
+<h2 id="org3173e3f">Details</h2>
+<div class="outline-text-2" id="text-org3173e3f">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
 cracking the HEGP homomorphic encryption method for genotypes and
@@ -326,17 +326,17 @@ available from UCL Figshare with DOI <a href="https://doi.org/10.5522/04/1278384
 </p>
 
 <p>
-The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$af of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored.
+The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$maf of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored.
 </p>
 
 <p>
-IF you don't want to use the R package, then you can unpack the datasets and write the genotypes and allele frequencies to tab-delimited text files with the R commands:
+If you don't want to use the R package, then you can unpack the datasets and write the genotypes and allele frequencies to tab-delimited text files with the R commands:
 </p>
 
 <div class="org-src-container">
 <pre class="src src-R">&gt; load("ciphertext2.D.RData")
 &gt; write.delim( D$geno, "ciphertext2.tsv", quote=F, row=F )
-&gt; write.delim( D$af, "af2.tsv", quote=F, row=F )
+&gt; write.delim( D$maf, "af2.tsv", quote=F, row=F )
 </pre>
 </div>
 
@@ -346,9 +346,9 @@ The plaintext allele frequency data might help with decryption as it gives targe
 </div>
 </div>
 
-<div id="outline-container-org3cfe5a9" class="outline-2">
-<h2 id="org3cfe5a9">Toy Example</h2>
-<div class="outline-text-2" id="text-org3cfe5a9">
+<div id="outline-container-org7a888af" class="outline-2">
+<h2 id="org7a888af">Toy Example</h2>
+<div class="outline-text-2" id="text-org7a888af">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
 </p>
@@ -426,11 +426,11 @@ To decrypt the ciphertext it is necessary to multiply it by the inverse of the k
 </p>
 
 <p>
-The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal is the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies in the plaintext which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure because uses of the ciphertext would need this information for some genetic analyses.
+The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal is the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies of the plaintext, which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure because users of the ciphertext would need this information for some genetic analyses.
 </p>
 
 <p>
-We provide the toy dataset and its encryption key as R objects in the file "toy.hegp.RData"  so that you can reproduce these analyses.
+We provide the toy dataset and its encryption key as R objects in the file "toy.hegp.RData" on this GitHub site so that you can reproduce these analyses.
 </p>
 
 <div class="org-src-container">
@@ -445,9 +445,9 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 </div>
 </div>
 
-<div id="outline-container-org90fedc4" class="outline-2">
-<h2 id="org90fedc4">Reference code</h2>
-<div class="outline-text-2" id="text-org90fedc4">
+<div id="outline-container-org0901a24" class="outline-2">
+<h2 id="org0901a24">Reference code</h2>
+<div class="outline-text-2" id="text-org0901a24">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
 and <a href="https://github.com/encryption4genetics/hegp-julia">Julia code</a>. An example of running a GWA as presented in the paper
@@ -457,9 +457,9 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-orgbdc6b7f" class="outline-2">
-<h2 id="orgbdc6b7f">Submissions</h2>
-<div class="outline-text-2" id="text-orgbdc6b7f">
+<div id="outline-container-org2de4255" class="outline-2">
+<h2 id="org2de4255">Submissions</h2>
+<div class="outline-text-2" id="text-org2de4255">
 <p>
 Submissions should be posted in a permanent public git account
 (GitHub, gitlab or similar) and reward will be given in USD.  The
@@ -471,9 +471,9 @@ hosted.
 </div>
 </div>
 
-<div id="outline-container-org7cfa03a" class="outline-2">
-<h2 id="org7cfa03a">Introduction</h2>
-<div class="outline-text-2" id="text-org7cfa03a">
+<div id="outline-container-org35ed7f8" class="outline-2">
+<h2 id="org35ed7f8">Introduction</h2>
+<div class="outline-text-2" id="text-org35ed7f8">
 <p>
 The homomorphic encryption method consists of an orthogonal
 transformation by multiplication by the orthogonal matrix P with a
@@ -514,7 +514,7 @@ quantile–quantile.
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-08-13 Thu 05:27</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-08-13 Thu 05:38</small>.
 </div>
 </body>
 </html>
