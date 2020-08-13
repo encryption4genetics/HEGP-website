@@ -154,16 +154,19 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 
 * Reference code
 
-The reference code for HEGP currently exists under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPLv3]] licensed [[https://github.com/encryption4genetics/hegp-R][R
-code]] or [[https://github.com/encryption4genetics/hegp-julia][Julia code]]. An example of running a GWA as presented in the
-paper can be found [[https://github.com/encryption4genetics/HEGP][here]]. The algorithm with a description of brute
-force attack is described in the [[https://www.genetics.org/content/215/2/359#sec-4][results section]].
+The reference code for HEGP is published under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPLv3]] licensed [[https://github.com/encryption4genetics/hegp-R][R code]]
+and [[https://github.com/encryption4genetics/hegp-julia][Julia code]]. An example of running a GWA as presented in the paper
+can be found [[https://github.com/encryption4genetics/HEGP][here]]. The algorithm with a description of brute force
+attack is described in the [[https://www.genetics.org/content/215/2/359#sec-4][results section]].
 
 * Submissions
 
-Submissions should be posted in a public git account (GitHub, gitlab
-or similar), and reward will be given in USD.  The solution should be
-reproducible and announced on the website [[https://github.com/encryption4genetics/HEGP-website/issues][issue tracker]].
+Submissions should be posted in a permanent public git account
+(GitHub, gitlab or similar) and reward will be given in USD.  The
+solution should be reproducible and announced on the website [[https://github.com/encryption4genetics/HEGP-website/issues][issue
+tracker]]. In case you don't want to use the issue tracker it is also
+possible to E-mail the authors to indicate where the solution is
+hosted.
 
 * Introduction
 

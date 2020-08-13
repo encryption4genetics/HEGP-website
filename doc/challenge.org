@@ -6,7 +6,7 @@
 In above animation genotypes and phenotypes are encoded in a
 matrix. Rows are individuals and columns are genotype markers along
 chromosomes as well as phenotypes. The data is scrambled while the
-analysis will still renders the same result.
+analysis will still render the same result.
 
 * Is this encryption safe?
 
@@ -21,25 +21,24 @@ than there are molecules in the universe.
 
 The challenge consists of decryption of two data sets.
 
-For the first challenge we encrypted a data set consisting of 10,000
-genotypes by 200 individuals somewhere in the public domain. We
-consider this data cracked if you can identify 5 individuals
-correctly. Note that this data may be derived from human, mouse, rat,
-nematode or plant data.
+For the first challenge we encrypted a data set consisting of 500
+individuals by 12,359 SNPs that exists somewhere in the
+public domain. We consider this data cracked if you can identify 50
+individuals correctly. Note that this data may be derived from human,
+mouse, rat, nematode or plant data.
 
-The second challenge is harder. We encrypted a mammal data set that is
-not in the public domain (yet). We consider the code cracked if you
-compute 30% of the genotypes of this matrix correctly (we specify the
-margin of error).
+The second challenge is harder. We encrypted a mammalian data set that
+is not in the public domain (yet). We consider the code cracked if you
+compute the plaintext genotypes of this matrix correctly with mean
+error of under 10%.
 
 * Who wins a
 
-@@html: <img src="cheque.png" align="left" />@@ The best result with a
-publicly reproducible solution submitted by December 31st 2020 wins
-the HEGP Challenge and a cash prize of one thousand dollars. Points
-are given for improving the method. In case of a tie the prize is
-shared. If there is no winner we will hold the prize until someone
-claims it.
+The best result with a publicly reproducible solution submitted by
+December 31st 2020 wins the HEGP Challenge and a cash prize of one
+thousand dollars. Points are given for improving the method. In case
+of a tie the prize is shared. If there is no winner we will hold the
+prize until someone claims it.
 
 * How to submit?
 
@@ -50,7 +49,5 @@ announce your solution on the website [[https://github.com/encryption4genetics/H
 /To go straight to the actual challenge click
 [[./challenge][here]]/.
 
-
-Bon chance!
 
 @@html: <img src="https://imgs.xkcd.com/comics/cryptography.png" align="center" width="100%" />@@
