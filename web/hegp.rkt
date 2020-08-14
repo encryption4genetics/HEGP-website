@@ -20,6 +20,9 @@
   "Animation of HEGP encrypting using step-wise linear orthogonal
 transformation:")
 
+(define CC-BY-NC
+  '(a ((href "https://creativecommons.org/licenses/by-nc/4.0/")) "CC-BY-NC"))
+
 (define code-repo-url
   '(a ((href "https://github.com/encryption4genetics"))
       "code"))
@@ -30,6 +33,12 @@ transformation:")
 
 (define (edit-button uri)
   `(div ((class "editbutton")) (a ((href ,uri)) "Edit text!")))
+
+(define footer
+  `(footer
+    (hr)
+    (div ((class "copyright")) "Source " ,code-repo-url
+         " by the HEGP team (AGPLv3) - text published under " ,CC-BY-NC)))
 
 (define (get-doc-path fn)
   (begin
@@ -74,7 +83,9 @@ transformation:")
            ,(edit-button "https://github.com/encryption4genetics/HEGP-website/blob/master/doc/call.org")
            (section
             ((class "call"))
-            ,(strip-body "call.html")))))))
+            ,(strip-body "call.html")))
+           ,footer
+           ))))
 
 (define (start request)
   (response/xexpr
@@ -107,10 +118,7 @@ transformation:")
            (section
             ((class "main-text"))
             ,(strip-body "challenge.html"))
-           (footer
-            (hr)
-            (div ((class "copyright")) "Source " ,code-repo-url
-                 " by the HEGP team"))
+           ,footer
            ))))
 
 (define (error-handler request)
