@@ -32,7 +32,7 @@ is not in the public domain (yet). We consider the code cracked if you
 compute the plaintext genotypes of this matrix correctly with mean
 error of under 10%.
 
-* Who wins a
+* Who wins a $1,000 check?
 
 The best result with a publicly reproducible solution submitted by
 December 31st 2020 wins the HEGP Challenge and a cash prize of one

@@ -7,9 +7,9 @@
 /To go straight to the actual challenge click
 [[./challenge][here]]/.
 
-
 Crack the code! The authors announce the HEGP (heegeepee;
-/hiːdʒiːpiː/) Challenge, with a $1,000 (one thousand dollar) prize for
+/hiːdʒiːpiː/) Challenge, @@html: <img width="80" src="stethoscope.png"
+align="right" />@@ with a $1,000 (one thousand dollar) prize for
 the individual or group who can crack HEGP encrypted data. HEGP, when
 proven solid, will have a large impact on the way human genetics is
 pursued today because it will allow for sharing genotype data while
