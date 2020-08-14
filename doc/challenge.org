@@ -51,3 +51,5 @@ announce your solution on the website [[https://github.com/encryption4genetics/H
 
 
 @@html: <img src="https://imgs.xkcd.com/comics/cryptography.png" align="center" width="100%" />@@
+
+(image created [[https://xkcd.com/153/][xkcd]] - license [[https://creativecommons.org/licenses/by-nc/2.5/][CC BY-NC 2.5]])
