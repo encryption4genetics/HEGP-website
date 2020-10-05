@@ -10,8 +10,8 @@
 
 (define title "HEGP CHALLENGE")
 (define subtitle
-  ; https://doi.org/10.1534/genetics.120.303153"))
-  "Genetics June 1, 2020 vol. 215 no. 2 359-372")
+  '(a ((href "https://doi.org/10.1534/genetics.120.303153"))
+      "Genetics June 1, 2020 vol. 215 no. 2 359-372"))
 
 (define subsubtitle
   "Homomorphic Encryption of Genotypes and Phenotypes (HEGP)")

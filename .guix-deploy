@@ -1,4 +1,6 @@
 # Invoke a GNU Guix container to run the website with something like
+#
+# alias guix=~/opt/guix/bin/guix
 
 guix environment -C guix --ad-hoc racket \
  --network --share=/export/tmp -- env TMPDIR=/export/tmp racket -L info web/hegp.rkt
