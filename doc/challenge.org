@@ -5,8 +5,9 @@
 
 In above animation genotypes and phenotypes are encoded in a
 matrix. Rows are individuals and columns are genotype markers along
-chromosomes as well as phenotypes. The data is scrambled while the
-analysis will still render the same result.
+chromosomes as well as phenotypes. Starting with the unencrypted data
+it gets scrambled by the keywhile the analysis will still render the
+same result (the black lines are values too small to show).
 
 * Is this encryption safe?
 

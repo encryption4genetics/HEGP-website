@@ -45,7 +45,9 @@ current practice of hiding/protecting genotype data and only providing
 summary statistics. One example is an important UK Biobank [[https://datashare.is.ed.ac.uk/handle/10283/3083][depression]]
 study where genetic markers are presented with their statistical
 significance. We can only assume that this study can be reproduced by
-a group of researchers having access to the original data.
+a group of researchers having access to the original data. The truth
+is that these outcomes can not be reproduced by you or me! HEGP will
+make data sharing and reproducible analysis a *reality*.
 
 * Simple explanation
 
@@ -75,10 +77,10 @@ association (GWA) of phenotype against genotype" />@@
 
 Genes (on chromosomes) involved in some trait are marked. This is the
 backbone computation for finding genes involved in some trait and
-used, for example, in the [[https://www.ukbiobank.ac.uk/][UK Biobank]] involving half a million
-subjects. They apply GWA to find genes involved in, for example,
-cancer or COVID-19 mortality; the first steps towards finding better
-treatments.
+pursued in the [[https://www.ukbiobank.ac.uk/][UK Biobank]] involving half a million subjects. To find
+associations GWA is applied to find genes involved in, for example,
+cancer or COVID-19 mortality; i.e., the first step towards finding
+causality and potentially better treatments.
 
 @@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="100%" />@@
 
@@ -86,7 +88,7 @@ In above image data is shown before and after encryption. The
 unencrypted data contains three values while the encrypted data shows
 a normal distribution.
 
-* Enigma
+* Enigma and why a challenge?
 
 The Enigma machine is an encryption device developed and used in the
 20th century to protect commercial, diplomatic and military
