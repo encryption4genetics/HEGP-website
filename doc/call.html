@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-06 Tue 11:09 -->
+<!-- 2020-10-06 Tue 11:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -243,9 +243,9 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 
-<div id="outline-container-orgf0f14d0" class="outline-2">
-<h2 id="orgf0f14d0">The HEGP challenge</h2>
-<div class="outline-text-2" id="text-orgf0f14d0">
+<div id="outline-container-orga0c10df" class="outline-2">
+<h2 id="orga0c10df">The HEGP challenge</h2>
+<div class="outline-text-2" id="text-orga0c10df">
 <p>
 The authors announce the HEGP (heegeepee;
 <i>hiːdʒiːpiː</i>) Challenge, with a $1,000 (one thousand dollar) prize for
@@ -258,9 +258,9 @@ the individual or group who can crack HEGP encrypted data.
 </div>
 </div>
 
-<div id="outline-container-org32d9b46" class="outline-2">
-<h2 id="org32d9b46">Details</h2>
-<div class="outline-text-2" id="text-org32d9b46">
+<div id="outline-container-orgf46ba03" class="outline-2">
+<h2 id="orgf46ba03">Details</h2>
+<div class="outline-text-2" id="text-orgf46ba03">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
 cracking the HEGP homomorphic encryption method for genotypes and
@@ -321,7 +321,7 @@ MD5 checksum for the ciphertext file is
 and the key file when the challenge is cracked or after six
 months. The MD5 checksums for these files are
 <code>a007e8f5f085798a88180386ffbfa58f</code> (plaintext genotypes) and
-<code>a9af5b4cd629811e1c2319d794849b2c</code> (key). The ciphertext file (146Mb) is
+<code>a9af5b4cd629811e1c2319d794849b2c</code> (key). The RData ciphertext file (146Mb) is
 available from UCL Figshare with DOI <a href="https://doi.org/10.5522/04/12783845">https://doi.org/10.5522/04/12783845</a>.
 </p>
 
@@ -346,9 +346,9 @@ The plaintext allele frequency data might help with decryption as it gives targe
 </div>
 </div>
 
-<div id="outline-container-orge6c7858" class="outline-2">
-<h2 id="orge6c7858">Toy Example</h2>
-<div class="outline-text-2" id="text-orge6c7858">
+<div id="outline-container-org6c89cf0" class="outline-2">
+<h2 id="org6c89cf0">Toy Example</h2>
+<div class="outline-text-2" id="text-org6c89cf0">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
 </p>
@@ -445,9 +445,9 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 </div>
 </div>
 
-<div id="outline-container-orgfd5b38b" class="outline-2">
-<h2 id="orgfd5b38b">Reference code</h2>
-<div class="outline-text-2" id="text-orgfd5b38b">
+<div id="outline-container-org2467e5e" class="outline-2">
+<h2 id="org2467e5e">Reference code</h2>
+<div class="outline-text-2" id="text-org2467e5e">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
 and <a href="https://github.com/encryption4genetics/hegp-julia">Julia code</a>. An example of running a GWA as presented in the paper
@@ -457,9 +457,9 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-org12c5272" class="outline-2">
-<h2 id="org12c5272">Submissions</h2>
-<div class="outline-text-2" id="text-org12c5272">
+<div id="outline-container-org82efd1d" class="outline-2">
+<h2 id="org82efd1d">Submissions</h2>
+<div class="outline-text-2" id="text-org82efd1d">
 <p>
 Submissions should be posted in a permanent public git account
 (GitHub, gitlab or similar) and reward will be given in USD.  The
@@ -468,12 +468,21 @@ tracker</a>. In case you don't want to use the issue tracker it is also
 possible to E-mail the authors to indicate where the solution is
 hosted.
 </p>
+
+<p>
+Important note: only real solutions will be considered that can
+reliably crack the key of any such dataset. If the original key
+somehow gets ripped from one of our laptops, for example, it does not
+count. Security stands or falls with how data is handled and how a key
+is generated. Even so, this challenge is about algorithmically
+cracking the code.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org18f4b1a" class="outline-2">
-<h2 id="org18f4b1a">Introduction</h2>
-<div class="outline-text-2" id="text-org18f4b1a">
+<div id="outline-container-org8da99b9" class="outline-2">
+<h2 id="org8da99b9">Introduction</h2>
+<div class="outline-text-2" id="text-org8da99b9">
 <p>
 The homomorphic encryption method consists of an orthogonal
 transformation by multiplication by the orthogonal matrix P with a
@@ -514,7 +523,7 @@ quantile–quantile.
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-06 Tue 11:09</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-06 Tue 11:20</small>.
 </div>
 </body>
 </html>

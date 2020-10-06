@@ -168,6 +168,13 @@ tracker]]. In case you don't want to use the issue tracker it is also
 possible to E-mail the authors to indicate where the solution is
 hosted.
 
+Important note: only real solutions will be considered that can
+reliably crack the key of any such dataset. If the original key
+somehow gets ripped from one of our laptops, for example, it does not
+count. Security stands or falls with how data is handled and how a key
+is generated. Even so, this challenge is about algorithmically
+cracking the code.
+
 * Introduction
 
 The homomorphic encryption method consists of an orthogonal
