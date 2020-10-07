@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-06 Tue 11:20 -->
+<!-- 2020-10-07 Wed 05:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -243,9 +243,9 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 
-<div id="outline-container-orga0c10df" class="outline-2">
-<h2 id="orga0c10df">The HEGP challenge</h2>
-<div class="outline-text-2" id="text-orga0c10df">
+<div id="outline-container-org1334cd2" class="outline-2">
+<h2 id="org1334cd2">The HEGP challenge</h2>
+<div class="outline-text-2" id="text-org1334cd2">
 <p>
 The authors announce the HEGP (heegeepee;
 <i>hiːdʒiːpiː</i>) Challenge, with a $1,000 (one thousand dollar) prize for
@@ -258,9 +258,9 @@ the individual or group who can crack HEGP encrypted data.
 </div>
 </div>
 
-<div id="outline-container-orgf46ba03" class="outline-2">
-<h2 id="orgf46ba03">Details</h2>
-<div class="outline-text-2" id="text-orgf46ba03">
+<div id="outline-container-orgc67ca10" class="outline-2">
+<h2 id="orgc67ca10">Details</h2>
+<div class="outline-text-2" id="text-orgc67ca10">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
 cracking the HEGP homomorphic encryption method for genotypes and
@@ -290,47 +290,78 @@ because it is orthogonal, will be the transpose of original key.
 </p>
 
 <p>
-For the first challenge we encrypted a data set consisting of 500
+For the first challenge1 we encrypted a data set consisting of 500
 individuals by 12,359 SNP genotypes which exists in the public
 domain. We consider this data cracked if 50 individuals (10%) are
 identified correctly. Note that this data might be from a human,
 mouse, rat, nematode or plant dataset. Note also that these genotypes
 are a subset of a public dataset, and that any missing genotypes in
-the public data have been imputed before encryption. The MD5 checksum
-of the ciphertext RData file is
-<code>511c48b858bd3f3f5aa103c712db41b5</code>. The plaintext and the key have MD5
-checksums of <code>68f3cefa00d3a71b56ae8fc27ac6e88a</code> and
-<code>da874b339a32fe7299ec140079389689</code> respectively. The ciphertext file
-(146Mb) is available from UCL Figshare with DOI
-<a href="https://doi.org/10.5522/04/12794999">https://doi.org/10.5522/04/12794999</a>.
+the public data have been imputed before encryption.
 </p>
 
 <p>
-This challenge addresses the concern is that individuals might be
-identified based on information in the public domain and/or by finding
-patterns in the encrypted data.
+The second challenge2 is harder. We encrypted a mammalian data set
+that is not in the public domain (yet), consisting of 1,586
+individuals and 12,561 SNPs. We consider the code cracked if you can
+compute the plaintext genotypes of this matrix correctly with mean
+error of under 10%.
 </p>
 
 <p>
-The second challenge is harder. We encrypted a mammalian data set that
-is not in the public domain (yet), comprising 1586 individuals and
-12561 SNPs. We consider the code cracked if you compute the plaintext
-genotypes of this matrix correctly with mean error of under 10%. The
-MD5 checksum for the ciphertext file is
-<code>8bbdc29e3d51dafa224a1af5a9bbadf7</code>. We will release the plaintext file
-and the key file when the challenge is cracked or after six
-months. The MD5 checksums for these files are
-<code>a007e8f5f085798a88180386ffbfa58f</code> (plaintext genotypes) and
-<code>a9af5b4cd629811e1c2319d794849b2c</code> (key). The RData ciphertext file (146Mb) is
-available from UCL Figshare with DOI <a href="https://doi.org/10.5522/04/12783845">https://doi.org/10.5522/04/12783845</a>.
+The MD5 checksums of the ciphertext files are found in <a href="http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi/md5sum.txt">md5sum.txt</a>. The
+full list, also for the original (secret for now) plaintext and keys
+is
+</p>
+
+<pre class="example">
+82f2f6bf027d185e095db7e571e50a67  challenge1.ciphertext.RData
+148ce09c6dfc878af09874c090a7bd64  challenge1.ciphertext.txt
+29f348fd4d9fbd453f658def53dbb87a  challenge1.key.RData
+b03e91f69d8124658e30562e1fa3b64c  challenge1.key.txt
+dcf724ff4798f4ec6674d029f220385f  challenge1.plaintext.RData
+e26367b991dfcedeaee139ffcc9a38a7  challenge1.plaintext.txt
+d2db18e96a3a8173b12383aa8d606583  challenge1.sample.ids.txt
+
+357a562462c10428a0278d461d56d06b  challenge2.ciphertext.RData
+c3706ecf12275859e3a040b23af1c9f9  challenge2.ciphertext.txt
+9615196bf89fb19105686a018e4c40c0  challenge2.key.RData
+ecf00d15e233b6dda73e40ebdc3358d2  challenge2.key.txt
+a007e8f5f085798a88180386ffbfa58f  challenge2.plaintext.RData
+2b1870215dd67cfe1b19c423979ab3c7  challenge2.plaintext.txt
+</pre>
+
+<p>
+With this challenge we want to address the concern that individuals
+might be identified based on information in the public domain and/or
+by finding patterns in the encrypted data.
 </p>
 
 <p>
-The ciphertext Datasets are provided as RData objects which can be manipulated using the hegp R package. Briefly, a dataset D is a list, comprising of minimally a phenotype vector D$y, and a genotype dosage matrix D$geno (rows are individuals, columns are SNPs), and a vector D$maf of plaintext minor allele frequencies of the SNPs. There are additional components that are useful for GWAS but not relevant for the decryption challenge. Full details are in the documentation of the R package. The challenge datasets have fake phenotype data that should be ignored.
+The ciphertext files for challenge1 and challenge2 can be downloaded from
+<a href="http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi">http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi</a>
 </p>
 
 <p>
-If you don't want to use the R package, then you can unpack the datasets and write the genotypes and allele frequencies to tab-delimited text files with the R commands:
+We will release the plaintext file and the key file when the challenge
+is cracked or after six months.
+</p>
+
+<p>
+The ciphertext Datasets are provided as RData objects which can be
+manipulated using the hegp R package. Briefly, a dataset D is a list,
+comprising of minimally a phenotype vector D$y, and a genotype dosage
+matrix D$geno (rows are individuals, columns are SNPs), and a vector
+D$maf of plaintext minor allele frequencies of the SNPs. There are
+additional components that are useful for GWAS but not relevant for
+the decryption challenge. Full details are in the documentation of the
+R package. The challenge datasets have fake phenotype data that should
+be ignored.
+</p>
+
+<p>
+If you don't want to use the R package, then you can unpack the
+datasets and write the genotypes and allele frequencies to
+tab-delimited text files with the R commands:
 </p>
 
 <div class="org-src-container">
@@ -341,14 +372,16 @@ If you don't want to use the R package, then you can unpack the datasets and wri
 </div>
 
 <p>
-The plaintext allele frequency data might help with decryption as it gives target allele frequencies to aim at (the allele frequencies of the ciphertext are different).
+The plaintext allele frequency data might help with decryption as it
+gives target allele frequencies to aim at (the allele frequencies of
+the ciphertext are different).
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6c89cf0" class="outline-2">
-<h2 id="org6c89cf0">Toy Example</h2>
-<div class="outline-text-2" id="text-org6c89cf0">
+<div id="outline-container-orga533c92" class="outline-2">
+<h2 id="orga533c92">Toy Example</h2>
+<div class="outline-text-2" id="text-orga533c92">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
 </p>
@@ -445,9 +478,9 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 </div>
 </div>
 
-<div id="outline-container-org2467e5e" class="outline-2">
-<h2 id="org2467e5e">Reference code</h2>
-<div class="outline-text-2" id="text-org2467e5e">
+<div id="outline-container-orge6d9534" class="outline-2">
+<h2 id="orge6d9534">Reference code</h2>
+<div class="outline-text-2" id="text-orge6d9534">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
 and <a href="https://github.com/encryption4genetics/hegp-julia">Julia code</a>. An example of running a GWA as presented in the paper
@@ -457,9 +490,9 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-org82efd1d" class="outline-2">
-<h2 id="org82efd1d">Submissions</h2>
-<div class="outline-text-2" id="text-org82efd1d">
+<div id="outline-container-orgee5fe89" class="outline-2">
+<h2 id="orgee5fe89">Submissions</h2>
+<div class="outline-text-2" id="text-orgee5fe89">
 <p>
 Submissions should be posted in a permanent public git account
 (GitHub, gitlab or similar) and reward will be given in USD.  The
@@ -480,9 +513,9 @@ cracking the code.
 </div>
 </div>
 
-<div id="outline-container-org8da99b9" class="outline-2">
-<h2 id="org8da99b9">Introduction</h2>
-<div class="outline-text-2" id="text-org8da99b9">
+<div id="outline-container-org32bc36e" class="outline-2">
+<h2 id="org32bc36e">Introduction</h2>
+<div class="outline-text-2" id="text-org32bc36e">
 <p>
 The homomorphic encryption method consists of an orthogonal
 transformation by multiplication by the orthogonal matrix P with a
@@ -523,7 +556,7 @@ quantile–quantile.
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-06 Tue 11:20</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-07 Wed 05:56</small>.
 </div>
 </body>
 </html>
