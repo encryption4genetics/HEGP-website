@@ -3,7 +3,7 @@
 
 * The HEGP challenge
 
-The authors announce the HEGP (heegeepee;
+[2020-11-01 Sun] The authors announce the HEGP (heegeepee;
 /hiːdʒiːpiː/) Challenge, with a $1,000 (one thousand dollar) prize for
 the individual or group who can crack HEGP encrypted data.
 
@@ -74,7 +74,8 @@ The ciphertext files for challenge1 and challenge2 can be downloaded from
 http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi
 
 We will release the plaintext file and the key file when the challenge
-is cracked or after six months.
+is cracked or after six months (which is May 1st 2021). In case the prize
+is unclaimed we'll create a new dataset for a fresh challenge.
 
 The ciphertext Datasets are provided as RData objects which can be
 manipulated using the hegp R package. Briefly, a dataset D is a list,
