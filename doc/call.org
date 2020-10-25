@@ -13,6 +13,7 @@ the individual or group who can crack HEGP encrypted data.
 
 - [ ] Fix IPFS link and checksums in text
 - [ ] Fix animation
+- [ ] Rerun analysis (to be sure)
 - [ ] Announce (November 1st)
 
 * Details
