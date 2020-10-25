@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-07 Wed 05:56 -->
+<!-- 2020-10-25 Sun 04:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -243,11 +243,11 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 
-<div id="outline-container-org1334cd2" class="outline-2">
-<h2 id="org1334cd2">The HEGP challenge</h2>
-<div class="outline-text-2" id="text-org1334cd2">
+<div id="outline-container-org3868632" class="outline-2">
+<h2 id="org3868632">The HEGP challenge</h2>
+<div class="outline-text-2" id="text-org3868632">
 <p>
-The authors announce the HEGP (heegeepee;
+<span class="timestamp-wrapper"><span class="timestamp">[2020-11-01 Sun] </span></span> The authors announce the HEGP (heegeepee;
 <i>hiːdʒiːpiː</i>) Challenge, with a $1,000 (one thousand dollar) prize for
 the individual or group who can crack HEGP encrypted data.
 </p>
@@ -258,9 +258,9 @@ the individual or group who can crack HEGP encrypted data.
 </div>
 </div>
 
-<div id="outline-container-orgc67ca10" class="outline-2">
-<h2 id="orgc67ca10">Details</h2>
-<div class="outline-text-2" id="text-orgc67ca10">
+<div id="outline-container-orgaf4a1ca" class="outline-2">
+<h2 id="orgaf4a1ca">Details</h2>
+<div class="outline-text-2" id="text-orgaf4a1ca">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
 cracking the HEGP homomorphic encryption method for genotypes and
@@ -343,7 +343,8 @@ The ciphertext files for challenge1 and challenge2 can be downloaded from
 
 <p>
 We will release the plaintext file and the key file when the challenge
-is cracked or after six months.
+is cracked or after six months (which is May 1st 2021). In case the prize
+is unclaimed we'll create a new dataset for a fresh challenge.
 </p>
 
 <p>
@@ -359,29 +360,87 @@ be ignored.
 </p>
 
 <p>
-If you don't want to use the R package, then you can unpack the
-datasets and write the genotypes and allele frequencies to
-tab-delimited text files with the R commands:
+To unpack the RData original datasets and write the genotypes and
+allele frequencies to tab-delimited text files from R:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">&gt; load("ciphertext2.D.RData")
-&gt; write.delim( D$geno, "ciphertext2.tsv", quote=F, row=F )
-&gt; write.delim( D$maf, "af2.tsv", quote=F, row=F )
+<pre class="src src-R">load("challenge2.ciphertext.RData")
+write.delim( D$geno, "challenge1.ciphertext.txt", quote=F, row=F )
 </pre>
 </div>
 
 <p>
-The plaintext allele frequency data might help with decryption as it
-gives target allele frequencies to aim at (the allele frequencies of
-the ciphertext are different).
+To run a GWA use the <a href="https://github.com/encryption4genetics/mixed-model-gwas">mixed-model-gwas</a> and <a href="https://github.com/encryption4genetics/hegp-R">hegp-R</a> packages you can run in R
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">library(hegp)
+load("challenge2.ciphertext.RData")
+ge.mm=basic.mm.gwas(De,mc.cores=1)
+  Built kinship dim 1586 1586
+  estimated heritability 4.355436e-05
+ls(ge.mm)
+  [1] "bp"   "chr"  "logP"
+ge.mm$logP[0:6]
+  [1] 0.22838514 0.74881022 0.13431556 0.00929719 1.13027222 0.13211178
+</pre>
+</div>
+
+<p>
+and draw a plot with
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">library(ggplot2)
+ggplot(ge.mm) + geom_point(aes(bp, logP), colour="#000099")
+</pre>
+</div>
+
+<p>
+ <img width="100%" src="challenge2.ge.mm.png" />
+</p>
+
+<p>
+To validate we ran the encrypted version (De) and then plaintext
+version (D) to compare outcomes with
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">library(hegp)
+load("challenge2.ciphertext.RData")
+load("challenge2.plaintext.RData")
+ls()
+  [1] "D"  "De"
+ls(D)
+  [1] "cov"  "geno" "maf"  "map"  "y"
+ls(De)
+  [1] "cov"  "geno" "map"  "y"
+g=basic.gwas(D)
+ge=basic.gwas(De)
+mean(abs(g$logP-ge$logP))
+  0.02951522
+ge.mm=basic.mm.gwas(De,mc.cores=1)
+  Built kinship dim 1586 1586
+  estimated heritability 4.355436e-05
+g.mm=basic.mm.gwas(D,mc.cores=1)
+  Built kinship dim 1586 1586
+  estimated heritability 4.356434e-05
+mean(abs(g.mm$logP-ge.mm$logP))
+   [1] 0.02943622
+</pre>
+</div>
+
+<p>
+Documentation for the R encryption and GWA functions can be found
+<a href="https://github.com/encryption4genetics/hegp-R/blob/master/hegp.pdf">here</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga533c92" class="outline-2">
-<h2 id="orga533c92">Toy Example</h2>
-<div class="outline-text-2" id="text-orga533c92">
+<div id="outline-container-org3bfe11a" class="outline-2">
+<h2 id="org3bfe11a">Toy Example</h2>
+<div class="outline-text-2" id="text-org3bfe11a">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
 </p>
@@ -478,9 +537,9 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 </div>
 </div>
 
-<div id="outline-container-orge6d9534" class="outline-2">
-<h2 id="orge6d9534">Reference code</h2>
-<div class="outline-text-2" id="text-orge6d9534">
+<div id="outline-container-org5c2b690" class="outline-2">
+<h2 id="org5c2b690">Reference code</h2>
+<div class="outline-text-2" id="text-org5c2b690">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
 and <a href="https://github.com/encryption4genetics/hegp-julia">Julia code</a>. An example of running a GWA as presented in the paper
@@ -490,9 +549,9 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-orgee5fe89" class="outline-2">
-<h2 id="orgee5fe89">Submissions</h2>
-<div class="outline-text-2" id="text-orgee5fe89">
+<div id="outline-container-org68e7469" class="outline-2">
+<h2 id="org68e7469">Submissions</h2>
+<div class="outline-text-2" id="text-org68e7469">
 <p>
 Submissions should be posted in a permanent public git account
 (GitHub, gitlab or similar) and reward will be given in USD.  The
@@ -508,14 +567,14 @@ reliably crack the key of any such dataset. If the original key
 somehow gets ripped from one of our laptops, for example, it does not
 count. Security stands or falls with how data is handled and how a key
 is generated. Even so, this challenge is about algorithmically
-cracking the code.
+cracking the code for the general case.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org32bc36e" class="outline-2">
-<h2 id="org32bc36e">Introduction</h2>
-<div class="outline-text-2" id="text-org32bc36e">
+<div id="outline-container-org2d2d82f" class="outline-2">
+<h2 id="org2d2d82f">Introduction</h2>
+<div class="outline-text-2" id="text-org2d2d82f">
 <p>
 The homomorphic encryption method consists of an orthogonal
 transformation by multiplication by the orthogonal matrix P with a
@@ -556,7 +615,7 @@ quantile–quantile.
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-07 Wed 05:56</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-25 Sun 04:26</small>.
 </div>
 </body>
 </html>

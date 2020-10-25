@@ -87,19 +87,66 @@ the decryption challenge. Full details are in the documentation of the
 R package. The challenge datasets have fake phenotype data that should
 be ignored.
 
-If you don't want to use the R package, then you can unpack the
-datasets and write the genotypes and allele frequencies to
-tab-delimited text files with the R commands:
+To unpack the RData original datasets and write the genotypes and
+allele frequencies to tab-delimited text files from R:
 
 #+begin_src R
-> load("ciphertext2.D.RData")
-> write.delim( D$geno, "ciphertext2.tsv", quote=F, row=F )
-> write.delim( D$maf, "af2.tsv", quote=F, row=F )
+load("challenge2.ciphertext.RData")
+write.delim( D$geno, "challenge1.ciphertext.txt", quote=F, row=F )
 #+end_src
 
-The plaintext allele frequency data might help with decryption as it
-gives target allele frequencies to aim at (the allele frequencies of
-the ciphertext are different).
+To run a GWA use the [[https://github.com/encryption4genetics/mixed-model-gwas][mixed-model-gwas]] and [[https://github.com/encryption4genetics/hegp-R][hegp-R]] packages you can run in R
+
+#+begin_src r
+library(hegp)
+load("challenge2.ciphertext.RData")
+ge.mm=basic.mm.gwas(De,mc.cores=1)
+  Built kinship dim 1586 1586
+  estimated heritability 4.355436e-05
+ls(ge.mm)
+  [1] "bp"   "chr"  "logP"
+ge.mm$logP[0:6]
+  [1] 0.22838514 0.74881022 0.13431556 0.00929719 1.13027222 0.13211178
+#+end_src
+
+and draw a plot with
+
+#+begin_src r
+library(ggplot2)
+ggplot(ge.mm) + geom_point(aes(bp, logP), colour="#000099")
+#+end_src
+
+@@html: <img width="100%" src="challenge2.ge.mm.png" />@@
+
+To validate we ran the encrypted version (De) and then plaintext
+version (D) to compare outcomes with
+
+#+begin_src R
+library(hegp)
+load("challenge2.ciphertext.RData")
+load("challenge2.plaintext.RData")
+ls()
+  [1] "D"  "De"
+ls(D)
+  [1] "cov"  "geno" "maf"  "map"  "y"
+ls(De)
+  [1] "cov"  "geno" "map"  "y"
+g=basic.gwas(D)
+ge=basic.gwas(De)
+mean(abs(g$logP-ge$logP))
+  0.02951522
+ge.mm=basic.mm.gwas(De,mc.cores=1)
+  Built kinship dim 1586 1586
+  estimated heritability 4.355436e-05
+g.mm=basic.mm.gwas(D,mc.cores=1)
+  Built kinship dim 1586 1586
+  estimated heritability 4.356434e-05
+mean(abs(g.mm$logP-ge.mm$logP))
+   [1] 0.02943622
+#+end_src
+
+Documentation for the R encryption and GWA functions can be found
+[[https://github.com/encryption4genetics/hegp-R/blob/master/hegp.pdf][here]].
 
 * Toy Example
 
@@ -201,7 +248,7 @@ reliably crack the key of any such dataset. If the original key
 somehow gets ripped from one of our laptops, for example, it does not
 count. Security stands or falls with how data is handled and how a key
 is generated. Even so, this challenge is about algorithmically
-cracking the code.
+cracking the code for the general case.
 
 * Introduction
 
