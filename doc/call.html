@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-10-25 Sun 04:26 -->
+<!-- 2020-10-25 Sun 05:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -194,73 +194,60 @@
   /*]]>*/-->
 </style>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
 <div id="content">
 
-<div id="outline-container-org3868632" class="outline-2">
-<h2 id="org3868632">The HEGP challenge</h2>
-<div class="outline-text-2" id="text-org3868632">
+<div id="outline-container-org6a6fdbe" class="outline-2">
+<h2 id="org6a6fdbe">The HEGP challenge</h2>
+<div class="outline-text-2" id="text-org6a6fdbe">
 <p>
-<span class="timestamp-wrapper"><span class="timestamp">[2020-11-01 Sun] </span></span> The authors announce the HEGP (heegeepee;
+<i>2020-11-01</i> The authors announce the HEGP (heegeepee;
 <i>hiːdʒiːpiː</i>) Challenge, with a $1,000 (one thousand dollar) prize for
 the individual or group who can crack HEGP encrypted data.
 </p>
 
 <p>
-<i>See this <a href="./start">page</a> for a general guide on HEGP and the cracking challenge</i>
+<i>See this <a href="./start">page</a> for a general introduction and relevance of HEGP</i>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgaf4a1ca" class="outline-2">
-<h2 id="orgaf4a1ca">Details</h2>
-<div class="outline-text-2" id="text-orgaf4a1ca">
+<div id="outline-container-org645d56c" class="outline-2">
+<h2 id="org645d56c"><span class="todo TODO">TODO</span> General announcements on Mastodon and Twitter</h2>
+<div class="outline-text-2" id="text-org645d56c">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Fix IPFS link and checksums in text</li>
+<li class="off"><code>[&#xa0;]</code> Fix animation</li>
+<li class="off"><code>[&#xa0;]</code> Announce (November 1st)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga7de4be" class="outline-2">
+<h2 id="orga7de4be">Details</h2>
+<div class="outline-text-2" id="text-orga7de4be">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
 cracking the HEGP homomorphic encryption method for genotypes and
@@ -274,11 +261,12 @@ The challenge consists of decryption of two genotype data sets.
 <p>
 In both data sets, plain text genotypes are represented numerically as
 matrices of allele dosages, with rows representing individuals and
-columns representing SNP sites (see below toy example). Each plain text
-genotype dosage takes the integer values 0,1,2. After encryption these
-dosages are transformed into floating point cyphertexts that are
-approximately Normally distributed. You task is to recover the
-plain text from the cyphertext.
+columns representing <a href="https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism">SNP sites</a> or <a href="https://en.wikipedia.org/wiki/Genotype">genotype</a> markers (see below toy
+example). Each plain text genotype dosage takes the integer values
+0,1,2. After encryption these dosages are transformed into floating
+point cyphertexts that are approximately normally distributed. The
+challenge is to recover the unencrypted original values from the
+cyphertext.
 </p>
 
 <p>
@@ -293,14 +281,14 @@ because it is orthogonal, will be the transpose of original key.
 For the first challenge1 we encrypted a data set consisting of 500
 individuals by 12,359 SNP genotypes which exists in the public
 domain. We consider this data cracked if 50 individuals (10%) are
-identified correctly. Note that this data might be from a human,
-mouse, rat, nematode or plant dataset. Note also that these genotypes
+identified correctly. Note that this data might be from human,
+mouse, rat, nematode or plants. Note also that these genotypes
 are a subset of a public dataset, and that any missing genotypes in
 the public data have been imputed before encryption.
 </p>
 
 <p>
-The second challenge2 is harder. We encrypted a mammalian data set
+The second challenge2 may be harder. We encrypted a mammalian data set
 that is not in the public domain (yet), consisting of 1,586
 individuals and 12,561 SNPs. We consider the code cracked if you can
 compute the plaintext genotypes of this matrix correctly with mean
@@ -308,12 +296,19 @@ error of under 10%.
 </p>
 
 <p>
-The MD5 checksums of the ciphertext files are found in <a href="http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi/md5sum.txt">md5sum.txt</a>. The
+The ciphertext files for challenge1 and challenge2 can be downloaded from
+<a href="http://ipfs.genenetwork.org/ipfs/QmRbUXSriap9XaiCU8HDXxaaQWkAVdWSvShLGfmkkceLBe">http://ipfs.genenetwork.org/ipfs/QmRbUXSriap9XaiCU8HDXxaaQWkAVdWSvShLGfmkkceLBe</a>
+</p>
+
+<p>
+The MD5 checksums of the ciphertext files are found in md5sum.txt. The
 full list, also for the original (secret for now) plaintext and keys
 is
 </p>
 
-<pre class="example">
+<pre class="example" id="orgf6b374e">
+FIX!!
+
 82f2f6bf027d185e095db7e571e50a67  challenge1.ciphertext.RData
 148ce09c6dfc878af09874c090a7bd64  challenge1.ciphertext.txt
 29f348fd4d9fbd453f658def53dbb87a  challenge1.key.RData
@@ -337,11 +332,6 @@ by finding patterns in the encrypted data.
 </p>
 
 <p>
-The ciphertext files for challenge1 and challenge2 can be downloaded from
-<a href="http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi">http://ipfs.genenetwork.org/ipfs/QmWhtzavGi9FXhabQX6tuNAp2KaBoYTHgKUFuk8jgsZVHi</a>
-</p>
-
-<p>
 We will release the plaintext file and the key file when the challenge
 is cracked or after six months (which is May 1st 2021). In case the prize
 is unclaimed we'll create a new dataset for a fresh challenge.
@@ -351,11 +341,10 @@ is unclaimed we'll create a new dataset for a fresh challenge.
 The ciphertext Datasets are provided as RData objects which can be
 manipulated using the hegp R package. Briefly, a dataset D is a list,
 comprising of minimally a phenotype vector D$y, and a genotype dosage
-matrix D$geno (rows are individuals, columns are SNPs), and a vector
-D$maf of plaintext minor allele frequencies of the SNPs. There are
+matrix D$geno (rows are individuals, columns are SNPs). There are
 additional components that are useful for GWAS but not relevant for
 the decryption challenge. Full details are in the documentation of the
-R package. The challenge datasets have fake phenotype data that should
+R package. The challenge datasets have fake phenotype data that can
 be ignored.
 </p>
 
@@ -375,7 +364,7 @@ To run a GWA use the <a href="https://github.com/encryption4genetics/mixed-model
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">library(hegp)
+<pre class="src src-r">library(hegp)
 load("challenge2.ciphertext.RData")
 ge.mm=basic.mm.gwas(De,mc.cores=1)
   Built kinship dim 1586 1586
@@ -392,7 +381,7 @@ and draw a plot with
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">library(ggplot2)
+<pre class="src src-r">library(ggplot2)
 ggplot(ge.mm) + geom_point(aes(bp, logP), colour="#000099")
 </pre>
 </div>
@@ -438,9 +427,9 @@ Documentation for the R encryption and GWA functions can be found
 </div>
 </div>
 
-<div id="outline-container-org3bfe11a" class="outline-2">
-<h2 id="org3bfe11a">Toy Example</h2>
-<div class="outline-text-2" id="text-org3bfe11a">
+<div id="outline-container-org56b7e44" class="outline-2">
+<h2 id="org56b7e44">Toy Example</h2>
+<div class="outline-text-2" id="text-org56b7e44">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
 </p>
@@ -537,9 +526,9 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 </div>
 </div>
 
-<div id="outline-container-org5c2b690" class="outline-2">
-<h2 id="org5c2b690">Reference code</h2>
-<div class="outline-text-2" id="text-org5c2b690">
+<div id="outline-container-org44597e1" class="outline-2">
+<h2 id="org44597e1">Reference code</h2>
+<div class="outline-text-2" id="text-org44597e1">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
 and <a href="https://github.com/encryption4genetics/hegp-julia">Julia code</a>. An example of running a GWA as presented in the paper
@@ -549,14 +538,14 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-org68e7469" class="outline-2">
-<h2 id="org68e7469">Submissions</h2>
-<div class="outline-text-2" id="text-org68e7469">
+<div id="outline-container-org940232f" class="outline-2">
+<h2 id="org940232f">Submissions</h2>
+<div class="outline-text-2" id="text-org940232f">
 <p>
 Submissions should be posted in a permanent public git account
 (GitHub, gitlab or similar) and reward will be given in USD.  The
-solution should be reproducible and announced on the website <a href="https://github.com/encryption4genetics/HEGP-website/issues">issue
-tracker</a>. In case you don't want to use the issue tracker it is also
+solution should be reproducible and announced on the website
+<a href="https://github.com/encryption4genetics/HEGP-website/issues">issue tracker</a>. In case you don't want to use the issue tracker it is also
 possible to E-mail the authors to indicate where the solution is
 hosted.
 </p>
@@ -572,9 +561,9 @@ cracking the code for the general case.
 </div>
 </div>
 
-<div id="outline-container-org2d2d82f" class="outline-2">
-<h2 id="org2d2d82f">Introduction</h2>
-<div class="outline-text-2" id="text-org2d2d82f">
+<div id="outline-container-org5b12d02" class="outline-2">
+<h2 id="org5b12d02">Introduction</h2>
+<div class="outline-text-2" id="text-org5b12d02">
 <p>
 The homomorphic encryption method consists of an orthogonal
 transformation by multiplication by the orthogonal matrix P with a
@@ -615,7 +604,7 @@ quantile–quantile.
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-25 Sun 04:26</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-10-25 Sun 05:38</small>.
 </div>
 </body>
 </html>
