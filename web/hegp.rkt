@@ -27,9 +27,9 @@ transformation:")
   '(a ((href "https://github.com/encryption4genetics"))
       "code"))
 (define point-right-image
-  '(img ((src "/pointing-finger-right.png"))))
+  '(img ((width "80%") (src "/pointing-finger-right.png"))))
 (define point-left-image
-  '(img ((src "/pointing-finger-left.png"))))
+  '(img ((width "80%") (src "/pointing-finger-left.png"))))
 
 (define (edit-button uri)
   `(div ((class "editbutton")) (a ((href ,uri)) "Edit text!")))
