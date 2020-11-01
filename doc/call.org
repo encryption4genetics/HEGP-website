@@ -1,20 +1,13 @@
-#+OPTIONS: toc:nil
-#+OPTIONS: num:nil
+# #+OPTIONS: toc:nil
+# #+OPTIONS: num:nil
 
-* The HEGP challenge
+* HEGP challenge
 
 /2020-11-01/ The authors announce the HEGP (heegeepee;
 /hiːdʒiːpiː/) Challenge, with a $1,000 (one thousand dollar) prize for
 the individual or group who can crack HEGP encrypted data.
 
 /See this [[./start][page]] for a general introduction and relevance of HEGP/
-
-* TODO General announcements on Mastodon and Twitter
-
-- [ ] Fix IPFS link and checksums in text
-- [ ] Fix animation
-- [ ] Rerun analysis (to be sure)
-- [ ] Announce (November 1st)
 
 * Details
 
@@ -61,9 +54,7 @@ full list, also for the original (secret for now) plaintext and keys
 is
 
 #+begin_example
-FIX!!
-
-82f2f6bf027d185e095db7e571e50a67  challenge1.ciphertext.RData
+5605626a9403ebdf96041d2dd766a516  challenge1.ciphertext.RData
 148ce09c6dfc878af09874c090a7bd64  challenge1.ciphertext.txt
 29f348fd4d9fbd453f658def53dbb87a  challenge1.key.RData
 b03e91f69d8124658e30562e1fa3b64c  challenge1.key.txt
@@ -71,7 +62,7 @@ dcf724ff4798f4ec6674d029f220385f  challenge1.plaintext.RData
 e26367b991dfcedeaee139ffcc9a38a7  challenge1.plaintext.txt
 d2db18e96a3a8173b12383aa8d606583  challenge1.sample.ids.txt
 
-357a562462c10428a0278d461d56d06b  challenge2.ciphertext.RData
+6d5d10279424a7c952ed8f9b0b086e84  challenge2.ciphertext.RData
 c3706ecf12275859e3a040b23af1c9f9  challenge2.ciphertext.txt
 9615196bf89fb19105686a018e4c40c0  challenge2.key.RData
 ecf00d15e233b6dda73e40ebdc3358d2  challenge2.key.txt
@@ -97,11 +88,12 @@ R package. The challenge datasets have fake phenotype data that can
 be ignored.
 
 To unpack the RData original datasets and write the genotypes and
-allele frequencies to tab-delimited text files from R:
+allele frequencies to tab-delimited text files from R, convert with
 
 #+begin_src R
+library(readr)
 load("challenge2.ciphertext.RData")
-write.delim( D$geno, "challenge1.ciphertext.txt", quote=F, row=F )
+write.csv( De$geno, "challenge1.ciphertext.txt", quote=F)
 #+end_src
 
 To run a GWA use the [[https://github.com/encryption4genetics/mixed-model-gwas][mixed-model-gwas]] and [[https://github.com/encryption4genetics/hegp-R][hegp-R]] packages you can run in R
@@ -156,6 +148,68 @@ mean(abs(g.mm$logP-ge.mm$logP))
 
 Documentation for the R encryption and GWA functions can be found
 [[https://github.com/encryption4genetics/hegp-R/blob/master/hegp.pdf][here]].
+
+
+* Reference code
+
+The reference code for HEGP is published under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPLv3]] licensed [[https://github.com/encryption4genetics/hegp-R][R code]]
+and [[https://github.com/encryption4genetics/hegp-julia][Julia code]]. An example of running a GWA as presented in the paper
+can be found [[https://github.com/encryption4genetics/HEGP][here]]. The algorithm with a description of brute force
+attack is described in the [[https://www.genetics.org/content/215/2/359#sec-4][results section]].
+
+* Submissions
+
+Submissions should be posted in a permanent public git account
+(GitHub, gitlab or similar) and reward will be given in USD.  The
+solution should be reproducible and announced on the website [[https://github.com/encryption4genetics/HEGP-website/issues][issue
+tracker]]. In case you don't want to use the issue tracker it is also
+possible to E-mail the authors to indicate where the solution is
+hosted. One such E-mail address is pjotr.public542 at thebird dot nl.
+
+Important note: only real solutions will be considered that can
+reliably crack the key of any such dataset. If the original key
+somehow gets ripped from one of our laptops, for example, it does not
+count. Security stands or falls with how data is handled and how a key
+is generated. Even so, this challenge is about algorithmically
+cracking the code for the general case.
+
+* Feedback
+
+Feedback on the challenge, this website etc., can be posted to the
+[[https://github.com/encryption4genetics/HEGP-website/issues][issue tracker]].
+
+* General introduction
+
+The homomorphic encryption method consists of an orthogonal
+transformation by multiplication by the orthogonal matrix P with a
+matrix containing the data y and G.
+
+@@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="800" />@@
+
+From the original [[https://www.genetics.org/content/215/2/359#sec-4][paper]]: privacy in relation to quantitative genetic
+analysis. (A) A numeric phenotype vector y (left) and genotype dosage
+matrix G (right) are represented as colours and shades of gray. Each
+row of the matrix represents one individual and each column one
+SNP. Genotypes are encoded as imputed dosages clustered at the values
+Embedded Image giving the numbers of alternate alleles. (B) The same
+data after multiplication by an orthogonal matrix P (a rotation
+represented by the curved orange arrow). The genotype dosages are now
+represented by a continuum of real numbers. (C) The distribution of
+dosages for a particular SNP (column of G), clustered around
+0,1,2. (D) The distribution of the same dosages after orthogonal
+transformation by multiplication by the orthogonal matrix P (black
+histogram) with the normal distribution with same mean and variance
+superimposed in red. (F) The normal QQ plot for the data in D, showing
+the transformed dosages are very close to a normal distribution. (E) A
+cartoon of the HEGP scheme. The top black arrow and equation show the
+linear mixed model relating the phenotype y to genotype G with
+regression coefficients β representing the allelic effects. The
+variance matrix for the residuals is V. After multiplication by
+orthogonal matrix P, plaintext data y, G  and the
+mixed linear model are transformed as shown in orange. The likelihood
+and regression estimates  β are preserved. HEGP,
+homomorphic encryption for genotypes and phenotypes; QQ,
+quantile–quantile.
 
 * Toy Example
 
@@ -236,58 +290,4 @@ We provide the toy dataset and its encryption key as R objects in the file "toy.
 [1] 2.524352e-09
 #+end_src
 
-* Reference code
-
-The reference code for HEGP is published under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPLv3]] licensed [[https://github.com/encryption4genetics/hegp-R][R code]]
-and [[https://github.com/encryption4genetics/hegp-julia][Julia code]]. An example of running a GWA as presented in the paper
-can be found [[https://github.com/encryption4genetics/HEGP][here]]. The algorithm with a description of brute force
-attack is described in the [[https://www.genetics.org/content/215/2/359#sec-4][results section]].
-
-* Submissions
-
-Submissions should be posted in a permanent public git account
-(GitHub, gitlab or similar) and reward will be given in USD.  The
-solution should be reproducible and announced on the website
-[[https://github.com/encryption4genetics/HEGP-website/issues][issue tracker]]. In case you don't want to use the issue tracker it is also
-possible to E-mail the authors to indicate where the solution is
-hosted.
-
-Important note: only real solutions will be considered that can
-reliably crack the key of any such dataset. If the original key
-somehow gets ripped from one of our laptops, for example, it does not
-count. Security stands or falls with how data is handled and how a key
-is generated. Even so, this challenge is about algorithmically
-cracking the code for the general case.
-
-* Introduction
-
-The homomorphic encryption method consists of an orthogonal
-transformation by multiplication by the orthogonal matrix P with a
-matrix containing the data y and G.
-
-@@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="800" />@@
-
-From the original [[https://www.genetics.org/content/215/2/359#sec-4][paper]]: privacy in relation to quantitative genetic
-analysis. (A) A numeric phenotype vector y (left) and genotype dosage
-matrix G (right) are represented as colours and shades of gray. Each
-row of the matrix represents one individual and each column one
-SNP. Genotypes are encoded as imputed dosages clustered at the values
-Embedded Image giving the numbers of alternate alleles. (B) The same
-data after multiplication by an orthogonal matrix P (a rotation
-represented by the curved orange arrow). The genotype dosages are now
-represented by a continuum of real numbers. (C) The distribution of
-dosages for a particular SNP (column of G), clustered around
-0,1,2. (D) The distribution of the same dosages after orthogonal
-transformation by multiplication by the orthogonal matrix P (black
-histogram) with the normal distribution with same mean and variance
-superimposed in red. (F) The normal QQ plot for the data in D, showing
-the transformed dosages are very close to a normal distribution. (E) A
-cartoon of the HEGP scheme. The top black arrow and equation show the
-linear mixed model relating the phenotype y to genotype G with
-regression coefficients β representing the allelic effects. The
-variance matrix for the residuals is V. After multiplication by
-orthogonal matrix P, plaintext data y, G  and the
-mixed linear model are transformed as shown in orange. The likelihood
-and regression estimates  β are preserved. HEGP,
-homomorphic encryption for genotypes and phenotypes; QQ,
-quantile–quantile.
+/For more background see this [[./start][page]]/
