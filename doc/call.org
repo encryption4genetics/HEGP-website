@@ -296,4 +296,8 @@ mean(abs(c$geno-d$geno))
 [1] 2.524352e-09
 #+end_src
 
-/For more background see this [[./start][page]]/
+* References
+
+- The original HEGP [[https://www.genetics.org/content/215/2/359][paper]]
+- HEGP discussion on [[https://redd.it/jn8g9h][reddit crypto forum]]
+- For more background see this [[./start][page]]
