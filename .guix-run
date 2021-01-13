@@ -1,0 +1,7 @@
+# Invoke a GNU Guix container to run the website with something like
+#
+# alias guix=~/opt/guix/bin/guix
+
+~/.config/guix/current/bin/guix environment -C guix --ad-hoc racket \
+ --substitute-urls="http://guix.genenetwork.org https://berlin.guixsd.org https://ci.guix.gnu.org https://mirror.hydra.gnu.org" --network --share=/export/tmp -- env TMPDIR=/export/tmp racket -L info web/hegp.rkt 
+

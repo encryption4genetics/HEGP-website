@@ -6,4 +6,6 @@ Run in a GNU Guix container with something like
 
 : guix environment -C guix --ad-hoc racket   --network --share=/export/tmp -- env TMPDIR=/export/tmp racket -L info web/hegp.rkt
 
+Requires an up-to-date racket if you get the xml/template error.
+
 The latest deployment command can be found in [[./.guix-deploy][.guix-deploy]].
