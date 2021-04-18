@@ -47,7 +47,7 @@ compute the plaintext genotypes of this matrix correctly with mean
 error of under 10%.
 
 The ciphertext files for challenge1 and challenge2 can be downloaded from
-http://ipfs.genenetwork.org/ipfs/QmRbUXSriap9XaiCU8HDXxaaQWkAVdWSvShLGfmkkceLBe
+http://ipfs.genenetwork.org/ipfs/QmWb3RupNtA9rvjD83jtB75AA3SjT8opx2M7T3CP8x5pqs
 
 The MD5 checksums of the ciphertext files are found in md5sum.txt. The
 full list, also for the original (secret for now) plaintext and keys
@@ -56,6 +56,7 @@ is
 #+begin_example
 5605626a9403ebdf96041d2dd766a516  challenge1.ciphertext.RData
 148ce09c6dfc878af09874c090a7bd64  challenge1.ciphertext.txt
+abbc5ce33025e723805cb14a332f6c9d  challenge1.maf.txt
 29f348fd4d9fbd453f658def53dbb87a  challenge1.key.RData
 b03e91f69d8124658e30562e1fa3b64c  challenge1.key.txt
 dcf724ff4798f4ec6674d029f220385f  challenge1.plaintext.RData
@@ -64,6 +65,7 @@ d2db18e96a3a8173b12383aa8d606583  challenge1.sample.ids.txt
 
 6d5d10279424a7c952ed8f9b0b086e84  challenge2.ciphertext.RData
 c3706ecf12275859e3a040b23af1c9f9  challenge2.ciphertext.txt
+15fa26a4d03e18f05643e917b8480216  challenge2.maf.txt
 9615196bf89fb19105686a018e4c40c0  challenge2.key.RData
 ecf00d15e233b6dda73e40ebdc3358d2  challenge2.key.txt
 a007e8f5f085798a88180386ffbfa58f  challenge2.plaintext.RData
@@ -277,7 +279,17 @@ This form of encryption is homomorphic with respect to many quantitative genetic
 
 To decrypt the ciphertext it is necessary to multiply it by the inverse of the key P, which is equal to the transpose of P because it is orthogonal.
 
-The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal is the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies of the plaintext, which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure because users of the ciphertext would need this information for some genetic analyses.
+The challenge is, in the absence of knowing either P or H, to find an
+orthogonal matrix Q such that QF "looks like" a genotype dosage
+matrix. That is, the distribution of the plaintext for a given SNP
+will be trimodal (or bimodal is the rarer homozygote genotype is
+absent from the sample) with expected modes specified by the
+Hardy-Weinberg equilibrium distribution. We provide the allele
+frequencies of the plaintext, which will help in defining these
+expected modes (see the maf.txt files on IPFS). It is reasonable to
+provide this information even though it might make the encryption less
+secure because users of the ciphertext would need this information for
+some genetic analyses.
 
 We provide the toy dataset and its encryption key as R objects in the
 file "toy.hegp.RData" from [[http://ipfs.genenetwork.org/ipfs/Qmdt8jEsua9wnGqxEqmGYzNfyhQFsSc769J3tuhgXtHnQg][Toy-HEGP]] so that you can reproduce these
