@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-06 Fri 02:20 -->
+<!-- 2021-04-18 Sun 04:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -222,19 +222,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9f69eb3">1. HEGP challenge</a></li>
-<li><a href="#orgecd5b2c">2. Details</a></li>
-<li><a href="#orgc46ab14">3. Reference code</a></li>
-<li><a href="#orgfbec1a4">4. Submissions</a></li>
-<li><a href="#org5ff21a1">5. Feedback</a></li>
-<li><a href="#orgbf0dd78">6. General introduction</a></li>
-<li><a href="#org35d70ae">7. Toy Example</a></li>
-<li><a href="#org948b3bc">8. References</a></li>
+<li><a href="#orgbc94471">1. HEGP challenge</a></li>
+<li><a href="#orgdffda8b">2. Details</a></li>
+<li><a href="#orgba6395b">3. Reference code</a></li>
+<li><a href="#org19a73ca">4. Submissions</a></li>
+<li><a href="#orged50a0d">5. Feedback</a></li>
+<li><a href="#orgf2b4561">6. General introduction</a></li>
+<li><a href="#org61d328e">7. Toy Example</a></li>
+<li><a href="#orgecaa617">8. References</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9f69eb3" class="outline-2">
-<h2 id="org9f69eb3"><span class="section-number-2">1</span> HEGP challenge</h2>
+<div id="outline-container-orgbc94471" class="outline-2">
+<h2 id="orgbc94471"><span class="section-number-2">1</span> HEGP challenge</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>2020-11-01</i> The authors announce the HEGP (heegeepee;
@@ -248,8 +248,8 @@ the individual or group who can crack HEGP encrypted data.
 </div>
 </div>
 
-<div id="outline-container-orgecd5b2c" class="outline-2">
-<h2 id="orgecd5b2c"><span class="section-number-2">2</span> Details</h2>
+<div id="outline-container-orgdffda8b" class="outline-2">
+<h2 id="orgdffda8b"><span class="section-number-2">2</span> Details</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
@@ -300,7 +300,7 @@ error of under 10%.
 
 <p>
 The ciphertext files for challenge1 and challenge2 can be downloaded from
-<a href="http://ipfs.genenetwork.org/ipfs/QmRbUXSriap9XaiCU8HDXxaaQWkAVdWSvShLGfmkkceLBe">http://ipfs.genenetwork.org/ipfs/QmRbUXSriap9XaiCU8HDXxaaQWkAVdWSvShLGfmkkceLBe</a>
+<a href="http://ipfs.genenetwork.org/ipfs/QmWb3RupNtA9rvjD83jtB75AA3SjT8opx2M7T3CP8x5pqs">http://ipfs.genenetwork.org/ipfs/QmWb3RupNtA9rvjD83jtB75AA3SjT8opx2M7T3CP8x5pqs</a>
 </p>
 
 <p>
@@ -309,9 +309,10 @@ full list, also for the original (secret for now) plaintext and keys
 is
 </p>
 
-<pre class="example" id="org1592435">
+<pre class="example" id="orge3c657b">
 5605626a9403ebdf96041d2dd766a516  challenge1.ciphertext.RData
 148ce09c6dfc878af09874c090a7bd64  challenge1.ciphertext.txt
+abbc5ce33025e723805cb14a332f6c9d  challenge1.maf.txt
 29f348fd4d9fbd453f658def53dbb87a  challenge1.key.RData
 b03e91f69d8124658e30562e1fa3b64c  challenge1.key.txt
 dcf724ff4798f4ec6674d029f220385f  challenge1.plaintext.RData
@@ -320,6 +321,7 @@ d2db18e96a3a8173b12383aa8d606583  challenge1.sample.ids.txt
 
 6d5d10279424a7c952ed8f9b0b086e84  challenge2.ciphertext.RData
 c3706ecf12275859e3a040b23af1c9f9  challenge2.ciphertext.txt
+15fa26a4d03e18f05643e917b8480216  challenge2.maf.txt
 9615196bf89fb19105686a018e4c40c0  challenge2.key.RData
 ecf00d15e233b6dda73e40ebdc3358d2  challenge2.key.txt
 a007e8f5f085798a88180386ffbfa58f  challenge2.plaintext.RData
@@ -355,9 +357,9 @@ allele frequencies to tab-delimited text files from R, convert with
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">library(readr)
-load("challenge2.ciphertext.RData")
-write.csv( De$geno, "challenge1.ciphertext.txt", quote=F)
+<pre class="src src-R"><span style="color: #8bc34a;">library</span>(readr)
+<span style="color: #8bc34a;">load</span>(<span style="color: #9ccc65;">"challenge2.ciphertext.RData"</span>)
+write.csv( De$geno, <span style="color: #9ccc65;">"challenge1.ciphertext.txt"</span>, quote=F)
 </pre>
 </div>
 
@@ -366,13 +368,13 @@ To run a GWA use the <a href="https://github.com/encryption4genetics/mixed-model
 </p>
 
 <div class="org-src-container">
-<pre class="src src-r">library(hegp)
-load("challenge2.ciphertext.RData")
+<pre class="src src-r"><span style="color: #8bc34a;">library</span>(hegp)
+<span style="color: #8bc34a;">load</span>(<span style="color: #9ccc65;">"challenge2.ciphertext.RData"</span>)
 ge.mm=basic.mm.gwas(De,mc.cores=1)
   Built kinship dim 1586 1586
   estimated heritability 4.355436e-05
 ls(ge.mm)
-  [1] "bp"   "chr"  "logP"
+  [1] <span style="color: #9ccc65;">"bp"</span>   <span style="color: #9ccc65;">"chr"</span>  <span style="color: #9ccc65;">"logP"</span>
 ge.mm$logP[0:6]
   [1] 0.22838514 0.74881022 0.13431556 0.00929719 1.13027222 0.13211178
 </pre>
@@ -383,8 +385,8 @@ and draw a plot with
 </p>
 
 <div class="org-src-container">
-<pre class="src src-r">library(ggplot2)
-ggplot(ge.mm) + geom_point(aes(bp, logP), colour="#000099")
+<pre class="src src-r"><span style="color: #8bc34a;">library</span>(ggplot2)
+ggplot(ge.mm) + geom_point(aes(bp, logP), colour=<span style="color: #9ccc65;">"#000099"</span>)
 </pre>
 </div>
 
@@ -398,15 +400,15 @@ version (D) to compare outcomes with
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R">library(hegp)
-load("challenge2.ciphertext.RData")
-load("challenge2.plaintext.RData")
+<pre class="src src-R"><span style="color: #8bc34a;">library</span>(hegp)
+<span style="color: #8bc34a;">load</span>(<span style="color: #9ccc65;">"challenge2.ciphertext.RData"</span>)
+<span style="color: #8bc34a;">load</span>(<span style="color: #9ccc65;">"challenge2.plaintext.RData"</span>)
 ls()
-  [1] "D"  "De"
+  [1] <span style="color: #9ccc65;">"D"</span>  <span style="color: #9ccc65;">"De"</span>
 ls(D)
-  [1] "cov"  "geno" "maf"  "map"  "y"
+  [1] <span style="color: #9ccc65;">"cov"</span>  <span style="color: #9ccc65;">"geno"</span> <span style="color: #9ccc65;">"maf"</span>  <span style="color: #9ccc65;">"map"</span>  <span style="color: #9ccc65;">"y"</span>
 ls(De)
-  [1] "cov"  "geno" "map"  "y"
+  [1] <span style="color: #9ccc65;">"cov"</span>  <span style="color: #9ccc65;">"geno"</span> <span style="color: #9ccc65;">"map"</span>  <span style="color: #9ccc65;">"y"</span>
 g=basic.gwas(D)
 ge=basic.gwas(De)
 mean(abs(g$logP-ge$logP))
@@ -430,8 +432,8 @@ Documentation for the R encryption and GWA functions can be found
 </div>
 
 
-<div id="outline-container-orgc46ab14" class="outline-2">
-<h2 id="orgc46ab14"><span class="section-number-2">3</span> Reference code</h2>
+<div id="outline-container-orgba6395b" class="outline-2">
+<h2 id="orgba6395b"><span class="section-number-2">3</span> Reference code</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
@@ -442,8 +444,8 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-orgfbec1a4" class="outline-2">
-<h2 id="orgfbec1a4"><span class="section-number-2">4</span> Submissions</h2>
+<div id="outline-container-org19a73ca" class="outline-2">
+<h2 id="org19a73ca"><span class="section-number-2">4</span> Submissions</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Submissions should be posted in a permanent public git account
@@ -465,8 +467,8 @@ cracking the code for the general case.
 </div>
 </div>
 
-<div id="outline-container-org5ff21a1" class="outline-2">
-<h2 id="org5ff21a1"><span class="section-number-2">5</span> Feedback</h2>
+<div id="outline-container-orged50a0d" class="outline-2">
+<h2 id="orged50a0d"><span class="section-number-2">5</span> Feedback</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Feedback on the challenge, this website etc., can be posted to the
@@ -475,8 +477,8 @@ Feedback on the challenge, this website etc., can be posted to the
 </div>
 </div>
 
-<div id="outline-container-orgbf0dd78" class="outline-2">
-<h2 id="orgbf0dd78"><span class="section-number-2">6</span> General introduction</h2>
+<div id="outline-container-orgf2b4561" class="outline-2">
+<h2 id="orgf2b4561"><span class="section-number-2">6</span> General introduction</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 The homomorphic encryption method consists of an orthogonal
@@ -517,8 +519,8 @@ quantile–quantile.
 </div>
 </div>
 
-<div id="outline-container-org35d70ae" class="outline-2">
-<h2 id="org35d70ae"><span class="section-number-2">7</span> Toy Example</h2>
+<div id="outline-container-org61d328e" class="outline-2">
+<h2 id="org61d328e"><span class="section-number-2">7</span> Toy Example</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
@@ -597,7 +599,17 @@ To decrypt the ciphertext it is necessary to multiply it by the inverse of the k
 </p>
 
 <p>
-The challenge is, in the absence of knowing either P or H, to find an orthogonal matrix Q such that QF "looks like" a genotype dosage matrix. That is, the distribution of the plaintext for a given SNP will be trimodal (or bimodal is the rarer homozygote genotype is absent from the sample) with expected modes specified by the Hardy-Weinberg equilibrium distribution. We provide the allele frequencies of the plaintext, which will help in defining these expected modes. It is reasonable to provide this information even though it might make the encryption less secure because users of the ciphertext would need this information for some genetic analyses.
+The challenge is, in the absence of knowing either P or H, to find an
+orthogonal matrix Q such that QF "looks like" a genotype dosage
+matrix. That is, the distribution of the plaintext for a given SNP
+will be trimodal (or bimodal is the rarer homozygote genotype is
+absent from the sample) with expected modes specified by the
+Hardy-Weinberg equilibrium distribution. We provide the allele
+frequencies of the plaintext, which will help in defining these
+expected modes (see the maf.txt files on IPFS). It is reasonable to
+provide this information even though it might make the encryption less
+secure because users of the ciphertext would need this information for
+some genetic analyses.
 </p>
 
 <p>
@@ -607,14 +619,14 @@ analyses. E.g.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"># Load a table
-toy = read.table("toy2.txt",header=F,row.names=1)
+<pre class="src src-R"><span style="color: #b0bec5;"># </span><span style="color: #b0bec5;">Load a table</span>
+toy = read.table(<span style="color: #9ccc65;">"toy2.txt"</span>,header=F,row.names=1)
 
-library(hegp)
-load("toy.hegp.RData") # loads encryption key
+<span style="color: #8bc34a;">library</span>(hegp)
+<span style="color: #8bc34a;">load</span>(<span style="color: #9ccc65;">"toy.hegp.RData"</span>) <span style="color: #b0bec5;"># </span><span style="color: #b0bec5;">loads encryption key</span>
 plaintext.toy$geno = as.matrix(toy)
 c = encrypt.D(plaintext.toy, key.toy)
-d = encrypt.D(c, key.toy, invert=TRUE)
+d = encrypt.D(c, key.toy, invert=<span style="color: #84ffff;">TRUE</span>)
 mean(abs(c$geno-d$geno))
 [1] 2.524352e-09
 </pre>
@@ -622,8 +634,8 @@ mean(abs(c$geno-d$geno))
 </div>
 </div>
 
-<div id="outline-container-org948b3bc" class="outline-2">
-<h2 id="org948b3bc"><span class="section-number-2">8</span> References</h2>
+<div id="outline-container-orgecaa617" class="outline-2">
+<h2 id="orgecaa617"><span class="section-number-2">8</span> References</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>The original HEGP <a href="https://www.genetics.org/content/215/2/359">paper</a></li>
@@ -634,7 +646,7 @@ mean(abs(c$geno-d$geno))
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2020-11-06 Fri 02:20</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2021-04-18 Sun 04:25</small>.
 </div>
 </body>
 </html>
