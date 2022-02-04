@@ -82,7 +82,7 @@ associations GWA is applied to find genes involved in, for example,
 cancer or COVID-19 mortality; i.e., the first step towards finding
 causality and potentially better treatments.
 
-@@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="100%" />@@
+@@html: <img src="slide.jpg" width="100%" />@@
 
 In above image data is shown before and after encryption. The
 unencrypted data contains three values while the encrypted data shows
