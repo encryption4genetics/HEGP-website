@@ -3,5 +3,4 @@
 # alias guix=~/opt/guix/bin/guix
 
 ~/opt/guix/bin/guix environment -C guix --ad-hoc racket \
- --network --share=/export/tmp \
- --substitute-urls="http://guix.genenetwork.org https://berlin.guixsd.org https://ci.guix.gnu.org https://mirror.hydra.gnu.org"
+ --network --share=/export/tmp 
