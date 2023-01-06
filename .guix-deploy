@@ -2,6 +2,6 @@
 #
 # alias guix=~/opt/guix/bin/guix
 
-~/opt/guix/bin/guix environment -C guix --ad-hoc racket \
+~/opt/guix-pull/bin/guix shell -C racket coreutils-minimal \
  --network --share=/export/tmp -- env TMPDIR=/export/tmp racket -L info web/hegp.rkt
 
