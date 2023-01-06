@@ -1,0 +1,12 @@
+[Unit]
+Description = HEGP container
+After=guix-daemon.target network.target 
+
+[Service]
+User = hegp
+Group = hegp
+ExecStart = /home/hegp/services/HEGP-website/.guix-deploy
+WorkingDirectory = /home/hegp/services/HEGP-website
+
+[Install]
+WantedBy = multi-user.target

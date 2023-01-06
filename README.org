@@ -8,4 +8,6 @@ Run in a GNU Guix container with something like
 
 Requires an up-to-date racket if you get the xml/template error.
 
+A systemd example is in ./etc.
+
 The latest deployment command can be found in [[./.guix-deploy][.guix-deploy]].

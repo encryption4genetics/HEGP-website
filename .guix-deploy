@@ -1,3 +1,5 @@
+#! /bin/sh
+
 # Invoke a GNU Guix container to run the website with something like
 #
 # alias guix=~/opt/guix/bin/guix
