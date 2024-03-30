@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-18 Sun 04:29 -->
+<!-- 2024-03-30 Sat 02:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Pjotr Prins" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,51 +191,28 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
-<div id="table-of-contents">
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbc94471">1. HEGP challenge</a></li>
-<li><a href="#orgdffda8b">2. Details</a></li>
-<li><a href="#orgba6395b">3. Reference code</a></li>
-<li><a href="#org19a73ca">4. Submissions</a></li>
-<li><a href="#orged50a0d">5. Feedback</a></li>
-<li><a href="#orgf2b4561">6. General introduction</a></li>
-<li><a href="#org61d328e">7. Toy Example</a></li>
-<li><a href="#orgecaa617">8. References</a></li>
+<li><a href="#org18f238b">1. HEGP challenge</a></li>
+<li><a href="#orgf523406">2. Details</a></li>
+<li><a href="#org8817beb">3. Reference code</a></li>
+<li><a href="#org09cc3ce">4. Submissions</a></li>
+<li><a href="#orgdf27c0e">5. Feedback</a></li>
+<li><a href="#org1068a44">6. General introduction</a></li>
+<li><a href="#org40a16fa">7. Toy Example</a></li>
+<li><a href="#org18616c5">8. References</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbc94471" class="outline-2">
-<h2 id="orgbc94471"><span class="section-number-2">1</span> HEGP challenge</h2>
+<div id="outline-container-org18f238b" class="outline-2">
+<h2 id="org18f238b"><span class="section-number-2">1.</span> HEGP challenge</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <i>2020-11-01</i> The authors announce the HEGP (heegeepee;
@@ -248,8 +226,8 @@ the individual or group who can crack HEGP encrypted data.
 </div>
 </div>
 
-<div id="outline-container-orgdffda8b" class="outline-2">
-<h2 id="orgdffda8b"><span class="section-number-2">2</span> Details</h2>
+<div id="outline-container-orgf523406" class="outline-2">
+<h2 id="orgf523406"><span class="section-number-2">2.</span> Details</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The authors offer a reward of $1000 (one thousand US dollar) for
@@ -300,7 +278,7 @@ error of under 10%.
 
 <p>
 The ciphertext files for challenge1 and challenge2 can be downloaded from
-<a href="http://ipfs.genenetwork.org/ipfs/QmWb3RupNtA9rvjD83jtB75AA3SjT8opx2M7T3CP8x5pqs">http://ipfs.genenetwork.org/ipfs/QmWb3RupNtA9rvjD83jtB75AA3SjT8opx2M7T3CP8x5pqs</a>
+<a href="https://files.genenetwork.org/HEGP-challenge/">https://files.genenetwork.org/HEGP-challenge/</a>
 </p>
 
 <p>
@@ -309,7 +287,7 @@ full list, also for the original (secret for now) plaintext and keys
 is
 </p>
 
-<pre class="example" id="orge3c657b">
+<pre class="example" id="org35f2930">
 5605626a9403ebdf96041d2dd766a516  challenge1.ciphertext.RData
 148ce09c6dfc878af09874c090a7bd64  challenge1.ciphertext.txt
 abbc5ce33025e723805cb14a332f6c9d  challenge1.maf.txt
@@ -432,8 +410,8 @@ Documentation for the R encryption and GWA functions can be found
 </div>
 
 
-<div id="outline-container-orgba6395b" class="outline-2">
-<h2 id="orgba6395b"><span class="section-number-2">3</span> Reference code</h2>
+<div id="outline-container-org8817beb" class="outline-2">
+<h2 id="org8817beb"><span class="section-number-2">3.</span> Reference code</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 The reference code for HEGP is published under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> licensed <a href="https://github.com/encryption4genetics/hegp-R">R code</a>
@@ -444,8 +422,8 @@ attack is described in the <a href="https://www.genetics.org/content/215/2/359#s
 </div>
 </div>
 
-<div id="outline-container-org19a73ca" class="outline-2">
-<h2 id="org19a73ca"><span class="section-number-2">4</span> Submissions</h2>
+<div id="outline-container-org09cc3ce" class="outline-2">
+<h2 id="org09cc3ce"><span class="section-number-2">4.</span> Submissions</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Submissions should be posted in a permanent public git account
@@ -467,8 +445,8 @@ cracking the code for the general case.
 </div>
 </div>
 
-<div id="outline-container-orged50a0d" class="outline-2">
-<h2 id="orged50a0d"><span class="section-number-2">5</span> Feedback</h2>
+<div id="outline-container-orgdf27c0e" class="outline-2">
+<h2 id="orgdf27c0e"><span class="section-number-2">5.</span> Feedback</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Feedback on the challenge, this website etc., can be posted to the
@@ -477,8 +455,8 @@ Feedback on the challenge, this website etc., can be posted to the
 </div>
 </div>
 
-<div id="outline-container-orgf2b4561" class="outline-2">
-<h2 id="orgf2b4561"><span class="section-number-2">6</span> General introduction</h2>
+<div id="outline-container-org1068a44" class="outline-2">
+<h2 id="org1068a44"><span class="section-number-2">6.</span> General introduction</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 The homomorphic encryption method consists of an orthogonal
@@ -519,8 +497,8 @@ quantile–quantile.
 </div>
 </div>
 
-<div id="outline-container-org61d328e" class="outline-2">
-<h2 id="org61d328e"><span class="section-number-2">7</span> Toy Example</h2>
+<div id="outline-container-org40a16fa" class="outline-2">
+<h2 id="org40a16fa"><span class="section-number-2">7.</span> Toy Example</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 The task is best described with an small example, a SNP dosage matrix G with 10 subjects (rows) and 8 SNPs (columns):
@@ -606,7 +584,7 @@ will be trimodal (or bimodal is the rarer homozygote genotype is
 absent from the sample) with expected modes specified by the
 Hardy-Weinberg equilibrium distribution. We provide the allele
 frequencies of the plaintext, which will help in defining these
-expected modes (see the maf.txt files on IPFS). It is reasonable to
+expected modes (see the maf.txt files). It is reasonable to
 provide this information even though it might make the encryption less
 secure because users of the ciphertext would need this information for
 some genetic analyses.
@@ -614,7 +592,7 @@ some genetic analyses.
 
 <p>
 We provide the toy dataset and its encryption key as R objects in the
-file "toy.hegp.RData" from <a href="http://ipfs.genenetwork.org/ipfs/Qmdt8jEsua9wnGqxEqmGYzNfyhQFsSc769J3tuhgXtHnQg">Toy-HEGP</a> so that you can reproduce these
+file "toy.hegp.RData" from <a href="https://files.genenetwork.org/Toy.HEGP/">Toy-HEGP</a> so that you can reproduce these
 analyses. E.g.
 </p>
 
@@ -634,8 +612,8 @@ mean(abs(c$geno-d$geno))
 </div>
 </div>
 
-<div id="outline-container-orgecaa617" class="outline-2">
-<h2 id="orgecaa617"><span class="section-number-2">8</span> References</h2>
+<div id="outline-container-org18616c5" class="outline-2">
+<h2 id="org18616c5"><span class="section-number-2">8.</span> References</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>The original HEGP <a href="https://www.genetics.org/content/215/2/359">paper</a></li>
@@ -646,7 +624,7 @@ mean(abs(c$geno-d$geno))
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2021-04-18 Sun 04:25</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2024-03-30 Sat 02:43</small>.
 </div>
 </body>
 </html>

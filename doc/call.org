@@ -47,7 +47,7 @@ compute the plaintext genotypes of this matrix correctly with mean
 error of under 10%.
 
 The ciphertext files for challenge1 and challenge2 can be downloaded from
-http://ipfs.genenetwork.org/ipfs/QmWb3RupNtA9rvjD83jtB75AA3SjT8opx2M7T3CP8x5pqs
+https://files.genenetwork.org/HEGP-challenge/
 
 The MD5 checksums of the ciphertext files are found in md5sum.txt. The
 full list, also for the original (secret for now) plaintext and keys
@@ -286,13 +286,13 @@ will be trimodal (or bimodal is the rarer homozygote genotype is
 absent from the sample) with expected modes specified by the
 Hardy-Weinberg equilibrium distribution. We provide the allele
 frequencies of the plaintext, which will help in defining these
-expected modes (see the maf.txt files on IPFS). It is reasonable to
+expected modes (see the maf.txt files). It is reasonable to
 provide this information even though it might make the encryption less
 secure because users of the ciphertext would need this information for
 some genetic analyses.
 
 We provide the toy dataset and its encryption key as R objects in the
-file "toy.hegp.RData" from [[http://ipfs.genenetwork.org/ipfs/Qmdt8jEsua9wnGqxEqmGYzNfyhQFsSc769J3tuhgXtHnQg][Toy-HEGP]] so that you can reproduce these
+file "toy.hegp.RData" from [[https://files.genenetwork.org/Toy.HEGP/][Toy-HEGP]] so that you can reproduce these
 analyses. E.g.
 
 #+begin_src R
