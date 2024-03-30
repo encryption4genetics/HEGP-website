@@ -186,7 +186,7 @@ The homomorphic encryption method consists of an orthogonal
 transformation by multiplication by the orthogonal matrix P with a
 matrix containing the data y and G.
 
-@@html: <img src="https://www.genetics.org/content/genetics/215/2/359/F1.large.jpg" width="800" />@@
+@@html: <img src="slide.jpg" width="800" />@@
 
 From the original [[https://www.genetics.org/content/215/2/359#sec-4][paper]]: privacy in relation to quantitative genetic
 analysis. (A) A numeric phenotype vector y (left) and genotype dosage
