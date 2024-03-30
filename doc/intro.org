@@ -29,7 +29,8 @@ encryption method named HEGP that allows for sharing of genotypes and
 phenotypes in the context of Genome Wide Association (GWA)
 studies. Importantly sharing but without giving away *private*
 information and making individuals identifiable. For more information
-check out [[https://www.slideshare.net/EmilianoDC/the-genomics-revolution-the-good-the-bad-and-the-ugly][a privacy researcher's perspective]].
+check out [[https://www.slideshare.net/EmilianoDC/the-genomics-revolution-the-good-the-bad-and-the-ugly][a privacy researcher's perspective]] and a recent follow up paper on [[https://pubmed.ncbi.nlm.nih.gov/38085098/][Using encrypted genotypes and phenotypes for collaborative genomic analyses to maintain data confidentiality]] by
+Tianjing Zhao, Fangyi Wang, Richard Mott, Jack Dekkers, and Hao Cheng, Genetics. 2024 Mar 6;226(3):iyad210. doi: 10.1093/genetics/iyad210. PMID: 38085098, where they combine Bayesian variable selection methods for genetic parameter estimation, genomic prediction, and GWAS.
 
 With HEGP anyone can freely hand over genotype and phenotype data to
 anyone else and have them reproduce the results. Even better, the
@@ -48,6 +49,10 @@ significance. We can only assume that this study can be reproduced by
 a group of researchers having access to the original data. The truth
 is that these outcomes can not be reproduced by you or me! HEGP will
 make data sharing and reproducible analysis a *reality*.
+
+* Cite
+
+Mott R, Fischer C, Prins P, Davies RW. Private Genomes and Public SNPs: **Homomorphic Encryption of Genotypes and Phenotypes for Shared Quantitative Genetics**. *Genetics*. 2020 Jun;215(2):359-372. doi: 10.1534/genetics.120.303153. Epub 2020 Apr 23. PMID: 32327562; PMCID: PMC7268998.
 
 * Simple explanation
 

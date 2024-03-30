@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-04 Fri 02:15 -->
+<!-- 2024-03-30 Sat 03:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Pjotr Prins" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,61 +191,14 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
-<div id="outline-container-org6f8dee7" class="outline-2">
-<h2 id="org6f8dee7">The $1,000 Challenge!</h2>
-<div class="outline-text-2" id="text-org6f8dee7">
+<div id="content" class="content">
+<div id="outline-container-orgc7a2b37" class="outline-2">
+<h2 id="orgc7a2b37">The $1,000 Challenge!</h2>
+<div class="outline-text-2" id="text-orgc7a2b37">
 <p>
 <i>To go straight to the actual challenge click
 <a href="./challenge">here</a></i>.
@@ -274,16 +228,17 @@ strawberries and Enigma.
 </div>
 </div>
 
-<div id="outline-container-orgbe82ab9" class="outline-2">
-<h2 id="orgbe82ab9">Relevance</h2>
-<div class="outline-text-2" id="text-orgbe82ab9">
+<div id="outline-container-org81bc0a5" class="outline-2">
+<h2 id="org81bc0a5">Relevance</h2>
+<div class="outline-text-2" id="text-org81bc0a5">
 <p>
 With a <a href="https://www.genetics.org/content/215/2/359">publication in Genetics</a> we present a novel Homomorphic
 encryption method named HEGP that allows for sharing of genotypes and
 phenotypes in the context of Genome Wide Association (GWA)
 studies. Importantly sharing but without giving away <b>private</b>
 information and making individuals identifiable. For more information
-check out <a href="https://www.slideshare.net/EmilianoDC/the-genomics-revolution-the-good-the-bad-and-the-ugly">a privacy researcher's perspective</a>.
+check out <a href="https://www.slideshare.net/EmilianoDC/the-genomics-revolution-the-good-the-bad-and-the-ugly">a privacy researcher's perspective</a> and a recent follow up paper on <a href="https://pubmed.ncbi.nlm.nih.gov/38085098/">Using encrypted genotypes and phenotypes for collaborative genomic analyses to maintain data confidentiality</a> by
+Tianjing Zhao, Fangyi Wang, Richard Mott, Jack Dekkers, and Hao Cheng, Genetics. 2024 Mar 6;226(3):iyad210. doi: 10.1093/genetics/iyad210. PMID: 38085098, where they combine Bayesian variable selection methods for genetic parameter estimation, genomic prediction, and GWAS.
 </p>
 
 <p>
@@ -312,9 +267,18 @@ make data sharing and reproducible analysis a <b>reality</b>.
 </div>
 </div>
 
-<div id="outline-container-org675977c" class="outline-2">
-<h2 id="org675977c">Simple explanation</h2>
-<div class="outline-text-2" id="text-org675977c">
+<div id="outline-container-orgfe4463e" class="outline-2">
+<h2 id="orgfe4463e">Cite</h2>
+<div class="outline-text-2" id="text-orgfe4463e">
+<p>
+Mott R, Fischer C, Prins P, Davies RW. Private Genomes and Public SNPs: <b><b>Homomorphic Encryption of Genotypes and Phenotypes for Shared Quantitative Genetics</b></b>. <b>Genetics</b>. 2020 Jun;215(2):359-372. doi: 10.1534/genetics.120.303153. Epub 2020 Apr 23. PMID: 32327562; PMCID: PMC7268998.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org265329e" class="outline-2">
+<h2 id="org265329e">Simple explanation</h2>
+<div class="outline-text-2" id="text-org265329e">
 <p>
 Homomorphic encryption is a mathematical translation of data into an
 encrypted form where the result of a computation is the same for the
@@ -366,9 +330,9 @@ a normal distribution.
 </div>
 </div>
 
-<div id="outline-container-orgdc8d158" class="outline-2">
-<h2 id="orgdc8d158">Enigma and why a challenge?</h2>
-<div class="outline-text-2" id="text-orgdc8d158">
+<div id="outline-container-orgdc01c3c" class="outline-2">
+<h2 id="orgdc01c3c">Enigma and why a challenge?</h2>
+<div class="outline-text-2" id="text-orgdc01c3c">
 <p>
 The Enigma machine is an encryption device developed and used in the
 20th century to protect commercial, diplomatic and military
@@ -385,7 +349,7 @@ history (one way or the other).
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2022-02-04 Fri 02:14</small>.
+<hr><small>Created by <a href="http://thebird.nl/">Pjotr Prins</a> (pjotr.public768 at thebird 'dot' nl) using Emacs org-mode and a healthy dose of Lisp!<br />Modified 2024-03-30 Sat 03:39</small>.
 </div>
 </body>
 </html>
